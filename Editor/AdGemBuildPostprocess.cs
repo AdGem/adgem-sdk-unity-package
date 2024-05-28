@@ -114,8 +114,8 @@ namespace AdGem.Editor
 			var resourceAttribute = manifest.CreateAttribute("android", "resource", NAMESPACE);
 			resourceAttribute.Value = RESOURCE_VALUE;
 
-			node.Attributes.Append(nameAttribute);
-			node.Attributes.Append(resourceAttribute);
+			node.Attributes!.Append(nameAttribute);
+			node.Attributes!.Append(resourceAttribute);
 		}
 
 		private void SaveConfigXml(string path, AdGemSettings settings)
