@@ -1,5 +1,6 @@
 {
     "name": "Adgem.Editor",
+    "rootNamespace": "Adgem.Editor",
     "references": [],
     "includePlatforms": [
         "Editor"
