@@ -1,38 +1,15 @@
 ﻿namespace AdGem.Runtime
 {
+#nullable enable
 	/// <summary>
 	/// Main entry point for communications with AdGem SDK.
 	/// </summary>
 	public class AdGem
 	{
 		/// <summary>
-		/// Possible states of the Offerwall.
-		/// </summary>
-		public enum State
-		{
-			DISABLED = -1,
-			NEEDS_INITIALIZATION = 0,
-			INITIALIZING = 1,
-			NEEDS_CAMPAIGN_REFRESH = 2,
-			REFRESHING_CAMPAIGN = 3,
-			NEEDS_DOWNLOAD = 4,
-			DOWNLOADING = 5,
-			READY = 6
-		}
-
-		/// <summary>
 		/// Callback to receive updates about the offer wall.
 		/// </summary>
 		public static OfferwallDelegate OfferwallCallback { get; } = new OfferwallDelegate();
-
-		/// <summary>
-		/// Initializes the SDK.
-		///
-		/// Should be called before any other calls to the SDK are made.
-		/// </summary>
-		public static void Init()
-		{
-		}
 
 		/// <summary>
 		/// Identifies whether AdGem is ready to show offer wall via the <see cref="ShowOfferwall"/>
@@ -40,7 +17,10 @@
 		/// <returns>True if AdGem is ready to show offer wall, false otherwise.</returns>
 		public static bool IsOfferwallReady()
 		{
-			return false;
+			if (_implementation == null)
+				return false;
+
+			return _implementation.IsOfferwallReady();
 		}
 
 		/// <summary>
@@ -49,7 +29,10 @@
 		/// <returns>offer wall state as defined in <see cref="State"/></returns>
 		public static State GetOfferwallState()
 		{
-			return State.DISABLED;
+			if (_implementation == null)
+				return State.DISABLED;
+
+			return _implementation.GetOfferwallState();
 		}
 
 		/// <summary>
@@ -58,6 +41,10 @@
 		/// </summary>
 		public static void ShowOfferwall()
 		{
+			if (_implementation == null)
+				return;
+
+			_implementation.ShowOfferwall();
 		}
 
 		/// <summary>
@@ -66,7 +53,10 @@
 		/// <returns>last known error. Error state is notified via <see cref="OfferwallDelegate.OnLoadingFailed"/></returns>
 		public static string GetError()
 		{
-			return string.Empty;
+			if (_implementation == null)
+				return string.Empty;
+
+			return _implementation.GetError();
 		}
 
 		/// <summary>
@@ -75,6 +65,19 @@
 		/// <param name="metadata">Extra information about the player.</param>
 		public static void SetPlayerMetaData(PlayerMetadata metadata)
 		{
+			if (_implementation == null)
+				return;
+
+			_implementation.SetPlayerMetaData(metadata);
 		}
+
+		private static readonly IAdGem? _implementation
+#if UNITY_ANDROID
+				= new AdGemAndroid()
+#elif UNITY_IOS
+				= new AdGemIos()
+#endif
+			;
+#nullable disable
 	}
 }
