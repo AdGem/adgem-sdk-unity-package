@@ -24,7 +24,7 @@ namespace AdGem.Runtime
 		/// <summary>
 		/// Required: unique player ID.
 		/// </summary>
-		public string id;
+		public string id { get; }
 
 		/// <summary>
 		/// Optional gender.
@@ -52,14 +52,20 @@ namespace AdGem.Runtime
 		public bool isPayer = false;
 
 		/// <summary>
+		/// Optional amount of money spent on In-App-Purchases. 0-99999.99
+		/// </summary>
+		public float iapTotalUsd = NOT_SET;
+
+		/// <summary>
 		/// Optional player creation time.
 		/// </summary>
 		public DateTime createdAt = DateTime.MinValue;
 
 		/// <summary>
-		/// Optional custom fields (up to 5).
+		/// Optional custom fields (up to 5). Other items will be ignored.
+		/// Each field's length must not exceed 99 characters.
 		/// </summary>
-		public List<string> customFields = new List<string>();
+		public List<string> customFields { get; } = new List<string>();
 
 		private const int NOT_SET = -1;
 	}

@@ -72,9 +72,9 @@
 		}
 
 		private static readonly IAdGem? _implementation
-#if UNITY_ANDROID
-				= new AdGemAndroid()
-#elif UNITY_IOS
+#if UNITY_ANDROID && !UNITY_EDITOR
+				= new AdGemAndroid(OfferwallCallback)
+#elif UNITY_IOS && !UNITY_EDITOR
 				= new AdGemIos()
 #endif
 			;
