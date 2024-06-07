@@ -7,6 +7,19 @@
 	public class AdGem
 	{
 		/// <summary>
+		/// Sets metadata specific to the user of this application.
+		/// Important: has to be called before any other SDK calls are made.
+		/// </summary>
+		/// <param name="metadata">Extra information about the player.</param>
+		public static void SetPlayerMetaData(PlayerMetadata metadata)
+		{
+			if (_implementation == null)
+				return;
+
+			_implementation.SetPlayerMetaData(metadata);
+		}
+
+		/// <summary>
 		/// Callback to receive updates about the offer wall.
 		/// </summary>
 		public static OfferwallDelegate OfferwallCallback { get; } = new OfferwallDelegate();
@@ -57,18 +70,6 @@
 				return string.Empty;
 
 			return _implementation.GetError();
-		}
-
-		/// <summary>
-		/// Sets additional metadata specific to the user of this application.
-		/// </summary>
-		/// <param name="metadata">Extra information about the player.</param>
-		public static void SetPlayerMetaData(PlayerMetadata metadata)
-		{
-			if (_implementation == null)
-				return;
-
-			_implementation.SetPlayerMetaData(metadata);
 		}
 
 		private static readonly IAdGem? _implementation
