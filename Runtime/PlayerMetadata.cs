@@ -1,15 +1,15 @@
 using System;
 using System.Collections.Generic;
 
-namespace AdGem.Runtime
+namespace AdGemUnity.Runtime
 {
 	public class PlayerMetadata
 	{
 		public enum Gender
 		{
-			UNKNOWN,
-			MALE,
-			FEMALE
+			UNKNOWN = -1,
+			MALE = 0,
+			FEMALE = 1
 		}
 
 		/// <summary>

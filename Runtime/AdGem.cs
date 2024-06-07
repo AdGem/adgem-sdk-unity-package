@@ -1,11 +1,16 @@
-﻿namespace AdGem.Runtime
+﻿namespace AdGemUnity.Runtime
 {
 #nullable enable
 	/// <summary>
 	/// Main entry point for communications with AdGem SDK.
 	/// </summary>
-	public class AdGem
+	public static class AdGem
 	{
+		/// <summary>
+		/// Callback to receive updates about the offer wall.
+		/// </summary>
+		public static OfferwallDelegate OfferwallCallback { get; } = new OfferwallDelegate();
+
 		/// <summary>
 		/// Sets metadata specific to the user of this application.
 		/// Important: has to be called before any other SDK calls are made.
@@ -18,11 +23,6 @@
 
 			_implementation.SetPlayerMetaData(metadata);
 		}
-
-		/// <summary>
-		/// Callback to receive updates about the offer wall.
-		/// </summary>
-		public static OfferwallDelegate OfferwallCallback { get; } = new OfferwallDelegate();
 
 		/// <summary>
 		/// Identifies whether AdGem is ready to show offer wall via the <see cref="ShowOfferwall"/>

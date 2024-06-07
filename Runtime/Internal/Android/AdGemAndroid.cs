@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace AdGem.Runtime
+namespace AdGemUnity.Runtime
 {
 	internal class AdGemAndroid : IAdGem
 	{

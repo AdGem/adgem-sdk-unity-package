@@ -1,6 +1,6 @@
 using UnityEngine.Events;
 
-namespace AdGem.Runtime
+namespace AdGemUnity.Runtime
 {
 	/// <summary>
 	/// Class encapsulating offerwall callbacks.

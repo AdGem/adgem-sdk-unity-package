@@ -1,6 +1,6 @@
 {
-    "name": "Adgem.Editor",
-    "rootNamespace": "Adgem.Editor",
+    "name": "AdGemUnity.Editor",
+    "rootNamespace": "AdGemUnity.Editor",
     "references": [],
     "includePlatforms": [
         "Editor"

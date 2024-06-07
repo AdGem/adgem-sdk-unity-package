@@ -1,4 +1,4 @@
-namespace AdGem.Runtime
+namespace AdGemUnity.Runtime
 {
 	/// <summary>
 	/// Possible states of the Offerwall.

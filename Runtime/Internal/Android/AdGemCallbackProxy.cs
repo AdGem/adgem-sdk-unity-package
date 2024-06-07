@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AdGem.Runtime
+namespace AdGemUnity.Runtime
 {
 	internal class AdGemCallbackProxy : AndroidJavaProxy
 	{

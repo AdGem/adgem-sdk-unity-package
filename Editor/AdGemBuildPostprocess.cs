@@ -5,7 +5,7 @@ using System.Xml;
 using UnityEditor.Android;
 using UnityEngine;
 
-namespace AdGem.Editor
+namespace AdGemUnity.Editor
 {
 	public class AdGemBuildPostprocess : IPostGenerateGradleAndroidProject
 	{

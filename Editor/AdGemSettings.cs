@@ -2,7 +2,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-namespace AdGem.Editor
+namespace AdGemUnity.Editor
 {
 	public class AdGemSettings : ScriptableObject
 	{

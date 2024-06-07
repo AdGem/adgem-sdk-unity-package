@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AdGem.Runtime
+namespace AdGemUnity.Runtime
 {
 	internal class AdGemAsyncCallbackHelper : MonoBehaviour
 	{

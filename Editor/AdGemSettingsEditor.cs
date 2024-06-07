@@ -1,6 +1,6 @@
 using UnityEditor;
 
-namespace AdGem.Editor
+namespace AdGemUnity.Editor
 {
 	[CustomEditor(typeof(AdGemSettings))]
 	public class AdGemSettingsEditor : UnityEditor.Editor

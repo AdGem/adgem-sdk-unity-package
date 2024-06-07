@@ -1,6 +1,6 @@
 {
-    "name": "AdGem.Runtime",
-    "rootNamespace": "AdGem.Runtime",
+    "name": "AdGemUnity.Runtime",
+    "rootNamespace": "AdGemUnity.Runtime",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

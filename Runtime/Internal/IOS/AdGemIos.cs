@@ -1,4 +1,4 @@
-namespace AdGem.Runtime
+namespace AdGemUnity.Runtime
 {
 	internal class AdGemIos : IAdGem
 	{
