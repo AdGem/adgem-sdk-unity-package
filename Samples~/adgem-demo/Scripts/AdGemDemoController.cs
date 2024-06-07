@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using AdGemUnity.Runtime;
 using TMPro;
+using Random = UnityEngine.Random;
 
 public class AdGemDemoController : MonoBehaviour
 {
@@ -53,6 +55,28 @@ public class AdGemDemoController : MonoBehaviour
 
 	private void SetPlayerMetadata()
 	{
+		var id = Guid.NewGuid().ToString();
+		var metadata = new PlayerMetadata(id)
+		{
+			// All these fields are optional
+			gender = PlayerMetadata.Gender.MALE,
+			age = Random.Range(12, 87),
+			placement = Random.Range(1, 1195),
+			createdAt = DateTime.Now,
+			isPayer = true,
+			iapTotalUsd = Random.Range(1.99f, 1267)
+		};
+
+		// Custom fields are also optional. Only 5 values will be set.
+		metadata.customFields.AddRange(new[]
+		{
+			"uno",
+			"two",
+			"tres",
+			"quattro",
+			"fifth",
+			"won't be added"
+		});
 	}
 
 	private void CheckOfferwallState()
