@@ -5,6 +5,7 @@ namespace AdGemUnity.Runtime
 	/// </summary>
 	public enum State
 	{
+		ERROR = -2,
 		DISABLED = -1,
 		NEEDS_INITIALIZATION = 0,
 		INITIALIZING = 1,
