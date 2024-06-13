@@ -1,17 +1,77 @@
 #import "AdGemSdk/AdGemSdk-Swift.h"
+#import "AdGemOfferwallDelegate.h"
 
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCUnusedGlobalDeclarationInspection"
+
+typedef void(AdGemVoidCallbackDelegate)(void *actionPtr);
+typedef void(AdGemIntCallbackDelegate)(void *actionPtr, int data);
+typedef void(AdGemStringCallbackDelegate)(void *actionPtr, const char *data);
 
 extern "C" {
 NSString* createNSStringFrom(const char * cstring) {
     return [NSString stringWithUTF8String:(cstring ?: "")];
 }
 
+char* cStringCopy(const char * string) {
+    char *res = (char *) malloc(strlen(string) + 1);
+    strcpy(res, string);
+    return res;
+}
+
+char* createCStringFrom(NSString* string) {
+    if (!string) {
+        string = @"";
+    }
+    return cStringCopy([string UTF8String]);
+}
+
 NSDate* parseDate(NSString* dateString) {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
     return [dateFormatter dateFromString:dateString];
+}
+
+AdGemOfferwallDelegate* _adGemDelegate;
+
+void _unregisterDelegate() {
+    if (_adGemDelegate == nullptr)
+        return;
+    
+    [AdGem setDelegate:nil];
+    _adGemDelegate = nullptr;
+}
+
+void _initDelegate(AdGemVoidCallbackDelegate onLoadStarted, void* onLoadStartedPtr,
+                   AdGemVoidCallbackDelegate onLoadFinished, void* onLoadFinishedPtr,
+                   AdGemStringCallbackDelegate onLoadError, void* onLoadErrorPtr,
+                   AdGemIntCallbackDelegate onReward, void* onRewardPtr,
+                   AdGemVoidCallbackDelegate onClosed, void* onClosedPtr) {
+    _unregisterDelegate();
+    
+    _adGemDelegate = [AdGemOfferwallDelegate new];
+    
+    _adGemDelegate.onOfferwallLoadingStarted = ^{
+        onLoadStarted(onLoadStartedPtr);
+    };
+    
+    _adGemDelegate.onOfferwallLoadingFinished = ^{
+        onLoadFinished(onLoadFinishedPtr);
+    };
+    
+    _adGemDelegate.onOfferwallLoadingFailedWithError = ^(NSString *error) {
+        onLoadError(onLoadErrorPtr, createCStringFrom(error));
+    };
+    
+    _adGemDelegate.onOfferwallRewardReceived = ^(int amount) {
+        onReward(onRewardPtr, amount);
+    };
+    
+    _adGemDelegate.onOfferwallClosed = ^{
+        onClosed(onClosedPtr);
+    };
+    
+    [AdGem setDelegate:_adGemDelegate];
 }
 
 void _setMetadata(const char* playerId, int age, int gender, int level, int placement, const char* createdAt, bool isPayer, float iapTotal,
@@ -51,7 +111,10 @@ void _setMetadata(const char* playerId, int age, int gender, int level, int plac
     auto custom5String = createNSStringFrom(custom5);
     if (![custom5String isEqual: @""])
         builder = [builder customField5WithField:custom5String];
+    
+    [AdGem setPlayerMetaDataWithMetaData:[builder build]];
 }
 }
 
 #pragma clang diagnostic pop
+
