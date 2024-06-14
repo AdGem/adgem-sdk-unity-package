@@ -40,7 +40,7 @@
 #if UNITY_ANDROID && !UNITY_EDITOR
 				= new AdGemAndroid(OfferwallCallback)
 #elif UNITY_IOS && !UNITY_EDITOR
-				= new AdGemIos()
+				= new AdGemIos(OfferwallCallback)
 #endif
 			;
 #nullable disable

@@ -74,7 +74,7 @@ void _initDelegate(AdGemVoidCallbackDelegate onLoadStarted, void* onLoadStartedP
     [AdGem setDelegate:_adGemDelegate];
 }
 
-void _setMetadata(const char* playerId, int age, int gender, int level, int placement, const char* createdAt, bool isPayer, float iapTotal,
+void _setMetadata(const char* playerId, int age, int gender, int level, long placement, const char* createdAt, bool isPayer, float iapTotal,
                   const char* custom1, const char* custom2, const char* custom3, const char* custom4, const char* custom5) {
     auto builder = [[Builder alloc] init];
     builder = [builder playerIdWithPlayerId:createNSStringFrom(playerId)];
@@ -114,7 +114,10 @@ void _setMetadata(const char* playerId, int age, int gender, int level, int plac
     
     [AdGem setPlayerMetaDataWithMetaData:[builder build]];
 }
+
+void _showOfferwall() {
+    [AdGem showOfferwall];
+}
 }
 
 #pragma clang diagnostic pop
-
