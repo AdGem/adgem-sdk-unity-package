@@ -2,35 +2,26 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using AdGemUnity.Runtime;
-using TMPro;
 using Random = UnityEngine.Random;
 
 public class AdGemDemoController : MonoBehaviour
 {
 	[SerializeField] private AdGemDemoLogger logger;
-
 	[SerializeField] private Button showOfferwallButton;
-	[SerializeField] private Button logLastErrorButton;
-
-	[SerializeField] private TMP_Text offerwallStateText;
 
 	private void Start()
 	{
 		showOfferwallButton.onClick.AddListener(OnShowOfferwallClicked);
-		logLastErrorButton.onClick.AddListener(OnLogErrorClicked);
 
 		BindAdGemCallbacks();
 
 		// You have to set the player metadata before any other SDK calls.
 		SetPlayerMetadata();
-
-		InvokeRepeating(nameof(CheckOfferwallState), 0, 1);
 	}
 
 	private void OnDestroy()
 	{
 		UnBindAdGemCallbacks();
-		CancelInvoke(nameof(CheckOfferwallState));
 	}
 
 	private void BindAdGemCallbacks()
@@ -79,24 +70,9 @@ public class AdGemDemoController : MonoBehaviour
 		});
 	}
 
-	private void CheckOfferwallState()
-	{
-		showOfferwallButton.interactable = AdGem.IsOfferwallReady();
-		offerwallStateText.text = $"Offerwall State: {AdGem.GetOfferwallState()}";
-	}
-
 	private void OnShowOfferwallClicked()
 	{
 		AdGem.ShowOfferwall();
-	}
-
-	private void OnLogErrorClicked()
-	{
-		var error = AdGem.GetError();
-		if (string.IsNullOrEmpty(error))
-			logger.LogMessage("No last error.");
-		else
-			logger.LogError(error);
 	}
 
 	private void OnOfferwallLoadingStarted()
