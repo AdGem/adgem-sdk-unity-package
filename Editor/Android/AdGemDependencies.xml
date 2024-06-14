@@ -9,7 +9,7 @@
             </repositories>
         </androidPackage>
     </androidPackages>
-    <iosPods>
-        <iosPod name="AdGem"/>
-    </iosPods>
+<!--    <iosPods>-->
+<!--        <iosPod name="AdGem"/>-->
+<!--    </iosPods>-->
 </dependencies>
