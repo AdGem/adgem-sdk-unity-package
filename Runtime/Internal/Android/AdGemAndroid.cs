@@ -21,24 +21,9 @@ namespace AdGemUnity.Runtime
 			_bridgeClass.CallStatic("unregisterOfferwallCallback", AndroidUtils.Activity, _proxy);
 		}
 
-		public bool IsOfferwallReady()
-		{
-			return _bridgeClass.CallStatic<bool>("isOfferwallReady");
-		}
-
-		public State GetOfferwallState()
-		{
-			return (State) _bridgeClass.CallStatic<int>("getOfferwallState");
-		}
-
 		public void ShowOfferwall()
 		{
 			_bridgeClass.CallStatic("showOfferwall", AndroidUtils.Activity);
-		}
-
-		public string GetError()
-		{
-			return _bridgeClass.CallStatic<string>("getError");
 		}
 
 		public void SetPlayerMetaData(PlayerMetadata metadata)
