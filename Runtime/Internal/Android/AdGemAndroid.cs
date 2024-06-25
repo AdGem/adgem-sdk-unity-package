@@ -28,8 +28,7 @@ namespace AdGemUnity.Runtime
 
 		public void SetPlayerMetaData(PlayerMetadata metadata)
 		{
-			var builder = _bridgeClass.CallStatic<AndroidJavaObject>("getMetadataBuilder");
-			builder.Call<AndroidJavaObject>("id", metadata.id);
+			var builder = _bridgeClass.CallStatic<AndroidJavaObject>("getMetadataBuilder", metadata.id);
 			if (metadata.gender != PlayerMetadata.Gender.UNKNOWN)
 				_bridgeClass.CallStatic("setGender", builder, (int) metadata.gender);
 			if (metadata.age >= 0)
