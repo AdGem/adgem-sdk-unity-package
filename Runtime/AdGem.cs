@@ -13,7 +13,7 @@
 
 		/// <summary>
 		/// Sets metadata specific to the user of this application.
-		/// Important: has to be called before any other SDK calls are made.
+		/// Important: has to be called before showing Offerwall.
 		/// </summary>
 		/// <param name="metadata">Extra information about the player.</param>
 		public static void SetPlayerMetaData(PlayerMetadata metadata)
