@@ -6,7 +6,9 @@ using JetBrains.Annotations;
 using UnityEditor;
 using UnityEditor.Android;
 using UnityEditor.Callbacks;
+#if UNITY_IOS
 using UnityEditor.iOS.Xcode;
+#endif
 using UnityEngine;
 
 namespace AdGemUnity.Editor
