@@ -15,7 +15,7 @@ public class AdGemDemoController : MonoBehaviour
 
 		BindAdGemCallbacks();
 
-		// You have to set the player metadata before any other SDK calls.
+		// You have to set the player metadata before showing offerwall.
 		SetPlayerMetadata();
 	}
 
@@ -68,6 +68,8 @@ public class AdGemDemoController : MonoBehaviour
 			"fifth",
 			"won't be added"
 		});
+
+		AdGem.SetPlayerMetaData(metadata);
 	}
 
 	private void OnShowOfferwallClicked()
