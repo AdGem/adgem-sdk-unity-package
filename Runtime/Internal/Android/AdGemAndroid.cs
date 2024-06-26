@@ -50,7 +50,7 @@ namespace AdGemUnity.Runtime
 				_bridgeClass.CallStatic("setCustomFields", builder, javaFields);
 			}
 
-			_bridgeClass.CallStatic("setPlayerMetaData");
+			_bridgeClass.CallStatic("setPlayerMetaData", builder);
 		}
 	}
 }
