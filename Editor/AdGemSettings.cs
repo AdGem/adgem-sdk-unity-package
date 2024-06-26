@@ -7,7 +7,7 @@ namespace AdGemUnity.Editor
 	public class AdGemSettings : ScriptableObject
 	{
 		[SerializeField]
-		public string AppId;
+		public int AppId;
 		[SerializeField]
 		public bool IsDebug;
 
