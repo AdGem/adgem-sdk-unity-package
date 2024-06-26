@@ -2,14 +2,20 @@
 using System.IO;
 using System.Text;
 using System.Xml;
+using JetBrains.Annotations;
+using UnityEditor;
 using UnityEditor.Android;
+using UnityEditor.Callbacks;
+using UnityEditor.iOS.Xcode;
 using UnityEngine;
 
 namespace AdGemUnity.Editor
 {
 	public class AdGemBuildPostprocess : IPostGenerateGradleAndroidProject
 	{
-		public int callbackOrder { get; } = 117;
+		private const int CALLBACK_ORDER = 117;
+
+		public int callbackOrder { get; } = CALLBACK_ORDER;
 
 		private const string NODE_NAME = "meta-data";
 		private const string NAME_VALUE = "com.adgem.Config";
@@ -23,7 +29,7 @@ namespace AdGemUnity.Editor
 					Debug.LogError("AdGem SDK will not work correctly.");
 
 				var settings = AdGemSettings.GetInstance();
-				if (string.IsNullOrEmpty(settings.AppId))
+				if (settings.AppId < 1)
 					Debug.LogError("App ID is not set in the AdGem Settings. AdGem SDK will not work correctly.");
 
 				SaveConfigXml(path, settings);
@@ -56,7 +62,7 @@ namespace AdGemUnity.Editor
 				manifest.Load(reader);
 			}
 
-			var applicationElement = (XmlElement) manifest.SelectSingleNode("manifest/application");
+			var applicationElement = (XmlElement)manifest.SelectSingleNode("manifest/application");
 			if (applicationElement == null)
 			{
 				Debug.LogError("Could not find application node in Android Manifest.");
@@ -68,7 +74,7 @@ namespace AdGemUnity.Editor
 
 			AddNode(manifest, applicationElement);
 
-			using (var writer = new XmlTextWriter(manifestPath, Encoding.UTF8) {Formatting = Formatting.Indented})
+			using (var writer = new XmlTextWriter(manifestPath, Encoding.UTF8) { Formatting = Formatting.Indented })
 			{
 				manifest.Save(writer);
 			}
@@ -129,5 +135,66 @@ namespace AdGemUnity.Editor
 
 			File.WriteAllText(configPath, content);
 		}
+
+		[PostProcessBuild(CALLBACK_ORDER)]
+		[UsedImplicitly]
+		public static void OnPostProcessBuild(BuildTarget target, string path)
+		{
+#if UNITY_IOS
+			if (target != BuildTarget.iOS)
+				return;
+
+			ModifyPlist(path);
+			ModifyProject(path);
+#endif
+		}
+
+#if UNITY_IOS
+		private static void ModifyPlist(string projectPath)
+		{
+			try
+			{
+				var plistPath = Path.Combine(projectPath, "Info.plist");
+				var plist = new PlistDocument();
+				plist.ReadFromFile(plistPath);
+
+				var settings = AdGemSettings.GetInstance();
+				if (settings.AppId < 1)
+					Debug.LogError("App ID is not set in the AdGem Settings. AdGem SDK will not work correctly.");
+
+				const string APP_ID_KEY = "AdGemAppID";
+				plist.root.SetInteger(APP_ID_KEY, settings.AppId);
+
+				plist.WriteToFile(plistPath);
+			}
+			catch (Exception e)
+			{
+				Debug.LogException(e);
+			}
+		}
+
+		private static void ModifyProject(string projectPath)
+		{
+			try
+			{
+				var path = PBXProject.GetPBXProjectPath(projectPath);
+				var project = new PBXProject();
+				project.ReadFromString(File.ReadAllText(path));
+				var target = project.GetUnityMainTargetGuid();
+
+				project.SetBuildProperty(project.GetUnityFrameworkTargetGuid(), "ENABLE_BITCODE", "NO");
+
+				project.SetBuildProperty(target, "ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES", "YES");
+				project.SetBuildProperty(project.GetUnityFrameworkTargetGuid(), "ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES",
+					"NO");
+
+				project.WriteToFile(path);
+			}
+			catch (Exception e)
+			{
+				Debug.LogException(e);
+			}
+		}
+#endif
 	}
 }
