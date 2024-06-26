@@ -44,7 +44,7 @@ namespace AdGemUnity.Runtime
 		{
 #if UNITY_IOS && !UNITY_EDITOR
 			var dateString = metadata.createdAt != DateTime.MinValue
-				? metadata.createdAt.ToString("YYYY-MM-dd HH:mm:ss")
+				? metadata.createdAt.ToString("yyyy-MM-dd HH:mm:ss")
 				: string.Empty;
 
 			var fields = metadata.customFields;

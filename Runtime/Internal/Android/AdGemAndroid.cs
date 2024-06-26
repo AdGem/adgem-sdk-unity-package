@@ -40,7 +40,7 @@ namespace AdGemUnity.Runtime
 			if (metadata.iapTotalUsd >= 0)
 				builder.Call<AndroidJavaObject>("iapTotalUsd", metadata.iapTotalUsd);
 			if (metadata.createdAt > DateTime.MinValue)
-				builder.Call<AndroidJavaObject>("createdAt", metadata.createdAt.ToString("YYYY-MM-dd HH:mm:ss"));
+				builder.Call<AndroidJavaObject>("createdAt", metadata.createdAt.ToString("yyyy-MM-dd HH:mm:ss"));
 
 			builder.Call<AndroidJavaObject>("isPayer", metadata.isPayer);
 

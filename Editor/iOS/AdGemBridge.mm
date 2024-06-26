@@ -28,7 +28,7 @@ char* createCStringFrom(NSString* string) {
 
 NSDate* parseDate(NSString* dateString) {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     return [dateFormatter dateFromString:dateString];
 }
 
@@ -87,8 +87,11 @@ void _setMetadata(const char* playerId, int age, int gender, int level, long pla
         builder = [builder playerPlacementWithPlace:placement];
     
     auto dateString = createNSStringFrom(createdAt);
-    if (![dateString isEqual: @""])
-        builder = [builder playerCreatedAtCreationDate:parseDate(dateString)];
+    if (![dateString isEqual: @""]) {
+        NSDate* date = parseDate(dateString);
+        if (date != nil)
+            builder = [builder playerCreatedAtCreationDate:date];
+    }
     
     builder = [builder playerPayerWithSpentMoney:isPayer];
     
