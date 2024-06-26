@@ -16,6 +16,255 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "AdGemGender",
+        "printedName": "AdGemGender",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "male",
+            "printedName": "male",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AdGemSdk.AdGemGender.Type) -> AdGemSdk.AdGemGender",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AdGemGender",
+                    "printedName": "AdGemSdk.AdGemGender",
+                    "usr": "c:@M@AdGemSdk@E@AdGemGender"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AdGemSdk.AdGemGender.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AdGemGender",
+                        "printedName": "AdGemSdk.AdGemGender",
+                        "usr": "c:@M@AdGemSdk@E@AdGemGender"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AdGemSdk@E@AdGemGender@AdGemGenderMale",
+            "mangledName": "$s8AdGemSdk0aB6GenderO4maleyA2CmF",
+            "moduleName": "AdGemSdk",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 0
+          },
+          {
+            "kind": "Var",
+            "name": "female",
+            "printedName": "female",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AdGemSdk.AdGemGender.Type) -> AdGemSdk.AdGemGender",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AdGemGender",
+                    "printedName": "AdGemSdk.AdGemGender",
+                    "usr": "c:@M@AdGemSdk@E@AdGemGender"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AdGemSdk.AdGemGender.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AdGemGender",
+                        "printedName": "AdGemSdk.AdGemGender",
+                        "usr": "c:@M@AdGemSdk@E@AdGemGender"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AdGemSdk@E@AdGemGender@AdGemGenderFemale",
+            "mangledName": "$s8AdGemSdk0aB6GenderO6femaleyA2CmF",
+            "moduleName": "AdGemSdk",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 1
+          },
+          {
+            "kind": "Var",
+            "name": "unknown",
+            "printedName": "unknown",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AdGemSdk.AdGemGender.Type) -> AdGemSdk.AdGemGender",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AdGemGender",
+                    "printedName": "AdGemSdk.AdGemGender",
+                    "usr": "c:@M@AdGemSdk@E@AdGemGender"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AdGemSdk.AdGemGender.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AdGemGender",
+                        "printedName": "AdGemSdk.AdGemGender",
+                        "usr": "c:@M@AdGemSdk@E@AdGemGender"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AdGemSdk@E@AdGemGender@AdGemGenderUnknown",
+            "mangledName": "$s8AdGemSdk0aB6GenderO7unknownyA2CmF",
+            "moduleName": "AdGemSdk",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 2
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AdGemSdk.AdGemGender?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AdGemGender",
+                    "printedName": "AdGemSdk.AdGemGender",
+                    "usr": "c:@M@AdGemSdk@E@AdGemGender"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:8AdGemSdk0aB6GenderO8rawValueACSgSi_tcfc",
+            "mangledName": "$s8AdGemSdk0aB6GenderO8rawValueACSgSi_tcfc",
+            "moduleName": "AdGemSdk",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8AdGemSdk0aB6GenderO8rawValueSivp",
+            "mangledName": "$s8AdGemSdk0aB6GenderO8rawValueSivp",
+            "moduleName": "AdGemSdk",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8AdGemSdk0aB6GenderO8rawValueSivg",
+                "mangledName": "$s8AdGemSdk0aB6GenderO8rawValueSivg",
+                "moduleName": "AdGemSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "c:@M@AdGemSdk@E@AdGemGender",
+        "mangledName": "$s8AdGemSdk0aB6GenderO",
+        "moduleName": "AdGemSdk",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "AdGemPlayerMetadata",
         "printedName": "AdGemPlayerMetadata",
         "children": [
@@ -104,8 +353,8 @@
             "children": [
               {
                 "kind": "Function",
-                "name": "playerId",
-                "printedName": "playerId(playerId:)",
+                "name": "initWithPlayerId",
+                "printedName": "initWithPlayerId(playerId:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -121,11 +370,13 @@
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:8AdGemSdk0aB14PlayerMetadataC7BuilderC8playerIdAfESS_tF",
-                "mangledName": "$s8AdGemSdk0aB14PlayerMetadataC7BuilderC8playerIdAfESS_tF",
+                "usr": "s:8AdGemSdk0aB14PlayerMetadataC7BuilderC08initWithD2Id06playerI0AESS_tFZ",
+                "mangledName": "$s8AdGemSdk0aB14PlayerMetadataC7BuilderC08initWithD2Id06playerI0AESS_tFZ",
                 "moduleName": "AdGemSdk",
-                "objc_name": "playerIdWithPlayerId:",
+                "static": true,
+                "objc_name": "initWithPlayerIdWithPlayerId:",
                 "declAttributes": [
+                  "Final",
                   "AccessControl",
                   "ObjC"
                 ],
@@ -537,7 +788,7 @@
               "ObjC"
             ],
             "superclassUsr": "c:objc(cs)NSObject",
-            "inheritsConvenienceInitializers": true,
+            "hasMissingDesignatedInitializers": true,
             "superclassNames": [
               "ObjectiveC.NSObject"
             ],
@@ -6756,255 +7007,6 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "AdGemGender",
-        "printedName": "AdGemGender",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "male",
-            "printedName": "male",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(AdGemSdk.AdGemGender.Type) -> AdGemSdk.AdGemGender",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "AdGemGender",
-                    "printedName": "AdGemSdk.AdGemGender",
-                    "usr": "c:@M@AdGemSdk@E@AdGemGender"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "AdGemSdk.AdGemGender.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "AdGemGender",
-                        "printedName": "AdGemSdk.AdGemGender",
-                        "usr": "c:@M@AdGemSdk@E@AdGemGender"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "c:@M@AdGemSdk@E@AdGemGender@AdGemGenderMale",
-            "mangledName": "$s8AdGemSdk0aB6GenderO4maleyA2CmF",
-            "moduleName": "AdGemSdk",
-            "declAttributes": [
-              "ObjC"
-            ],
-            "fixedbinaryorder": 0
-          },
-          {
-            "kind": "Var",
-            "name": "female",
-            "printedName": "female",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(AdGemSdk.AdGemGender.Type) -> AdGemSdk.AdGemGender",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "AdGemGender",
-                    "printedName": "AdGemSdk.AdGemGender",
-                    "usr": "c:@M@AdGemSdk@E@AdGemGender"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "AdGemSdk.AdGemGender.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "AdGemGender",
-                        "printedName": "AdGemSdk.AdGemGender",
-                        "usr": "c:@M@AdGemSdk@E@AdGemGender"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "c:@M@AdGemSdk@E@AdGemGender@AdGemGenderFemale",
-            "mangledName": "$s8AdGemSdk0aB6GenderO6femaleyA2CmF",
-            "moduleName": "AdGemSdk",
-            "declAttributes": [
-              "ObjC"
-            ],
-            "fixedbinaryorder": 1
-          },
-          {
-            "kind": "Var",
-            "name": "unknown",
-            "printedName": "unknown",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(AdGemSdk.AdGemGender.Type) -> AdGemSdk.AdGemGender",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "AdGemGender",
-                    "printedName": "AdGemSdk.AdGemGender",
-                    "usr": "c:@M@AdGemSdk@E@AdGemGender"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "AdGemSdk.AdGemGender.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "AdGemGender",
-                        "printedName": "AdGemSdk.AdGemGender",
-                        "usr": "c:@M@AdGemSdk@E@AdGemGender"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "c:@M@AdGemSdk@E@AdGemGender@AdGemGenderUnknown",
-            "mangledName": "$s8AdGemSdk0aB6GenderO7unknownyA2CmF",
-            "moduleName": "AdGemSdk",
-            "declAttributes": [
-              "ObjC"
-            ],
-            "fixedbinaryorder": 2
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(rawValue:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "AdGemSdk.AdGemGender?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "AdGemGender",
-                    "printedName": "AdGemSdk.AdGemGender",
-                    "usr": "c:@M@AdGemSdk@E@AdGemGender"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:8AdGemSdk0aB6GenderO8rawValueACSgSi_tcfc",
-            "mangledName": "$s8AdGemSdk0aB6GenderO8rawValueACSgSi_tcfc",
-            "moduleName": "AdGemSdk",
-            "implicit": true,
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Var",
-            "name": "rawValue",
-            "printedName": "rawValue",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:8AdGemSdk0aB6GenderO8rawValueSivp",
-            "mangledName": "$s8AdGemSdk0aB6GenderO8rawValueSivp",
-            "moduleName": "AdGemSdk",
-            "implicit": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8AdGemSdk0aB6GenderO8rawValueSivg",
-                "mangledName": "$s8AdGemSdk0aB6GenderO8rawValueSivg",
-                "moduleName": "AdGemSdk",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          }
-        ],
-        "declKind": "Enum",
-        "usr": "c:@M@AdGemSdk@E@AdGemGender",
-        "mangledName": "$s8AdGemSdk0aB6GenderO",
-        "moduleName": "AdGemSdk",
-        "declAttributes": [
-          "AccessControl",
-          "ObjC"
-        ],
-        "enumRawTypeName": "Int",
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "RawRepresentable",
-            "printedName": "RawRepresentable",
-            "children": [
-              {
-                "kind": "TypeWitness",
-                "name": "RawValue",
-                "printedName": "RawValue",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ]
-              }
-            ],
-            "usr": "s:SY",
-            "mangledName": "$sSY"
-          }
-        ]
-      },
-      {
-        "kind": "TypeDecl",
         "name": "AdGemDelegate",
         "printedName": "AdGemDelegate",
         "children": [
@@ -7381,100 +7383,6 @@
           },
           {
             "kind": "Function",
-            "name": "startSession",
-            "printedName": "startSession(appId:usesStandardVideo:usesRewardedVideo:usesOfferwall:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "hasDefaultArg": true,
-                "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "hasDefaultArg": true,
-                "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "hasDefaultArg": true,
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@AdGemSdk@objc(cs)AdGem(cm)startSessionWithAppId:usesStandardVideo:usesRewardedVideo:usesOfferwall:",
-            "mangledName": "$s8AdGemSdk0aB0C12startSession5appId17usesStandardVideo0h8RewardedJ00H9OfferwallySi_S3btFZ",
-            "moduleName": "AdGemSdk",
-            "static": true,
-            "objc_name": "startSessionWithAppId:usesStandardVideo:usesRewardedVideo:usesOfferwall:",
-            "declAttributes": [
-              "AccessControl",
-              "ObjC"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "cacheOfferwall",
-            "printedName": "cacheOfferwall()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@AdGemSdk@objc(cs)AdGem(cm)cacheOfferwall",
-            "mangledName": "$s8AdGemSdk0aB0C14cacheOfferwallyyFZ",
-            "moduleName": "AdGemSdk",
-            "static": true,
-            "declAttributes": [
-              "AccessControl",
-              "ObjC"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "showOfferwall",
-            "printedName": "showOfferwall()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@AdGemSdk@objc(cs)AdGem(cm)showOfferwall",
-            "mangledName": "$s8AdGemSdk0aB0C13showOfferwallyyFZ",
-            "moduleName": "AdGemSdk",
-            "static": true,
-            "declAttributes": [
-              "AccessControl",
-              "ObjC"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "setPlayerMetaData",
             "printedName": "setPlayerMetaData(metaData:)",
             "children": [
@@ -7504,19 +7412,18 @@
           },
           {
             "kind": "Function",
-            "name": "envURL",
-            "printedName": "envURL()",
+            "name": "showOfferwall",
+            "printedName": "showOfferwall()",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "name": "Void",
+                "printedName": "()"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@AdGemSdk@objc(cs)AdGem(cm)envURL",
-            "mangledName": "$s8AdGemSdk0aB0C6envURLSSyFZ",
+            "usr": "c:@M@AdGemSdk@objc(cs)AdGem(cm)showOfferwall",
+            "mangledName": "$s8AdGemSdk0aB0C13showOfferwallyyFZ",
             "moduleName": "AdGemSdk",
             "static": true,
             "declAttributes": [
@@ -8675,6 +8582,13 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
@@ -9032,13 +8946,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
             "name": "Comparable",
             "printedName": "Comparable",
             "usr": "s:SL",
@@ -9257,8 +9164,7 @@
             "moduleName": "AdGemSdk",
             "static": true,
             "declAttributes": [
-              "Final",
-              "AccessControl"
+              "Final"
             ],
             "isFromExtension": true,
             "throwing": true,
@@ -9470,204 +9376,239 @@
   "ConstValues": [
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
+      "kind": "IntegerLiteral",
+      "offset": 216,
+      "length": 6,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
+      "kind": "IntegerLiteral",
+      "offset": 232,
+      "length": 7,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
+      "kind": "IntegerLiteral",
+      "offset": 216,
+      "length": 6,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
+      "kind": "IntegerLiteral",
+      "offset": 232,
+      "length": 7,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "Dictionary",
-      "offset": 447,
+      "offset": 535,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 702,
+      "offset": 790,
       "length": 21,
       "value": "\"yyyy-MM-dd HH:mm:ss\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 862,
+      "offset": 950,
       "length": 10,
       "value": "\"playerid\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 1023,
+      "offset": 1233,
       "length": 12,
       "value": "\"player_age\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 1044,
+      "offset": 1254,
       "length": 8,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 1051,
+      "offset": 1261,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 1256,
+      "offset": 1466,
       "length": 15,
       "value": "\"player_gender\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 1280,
+      "offset": 1490,
       "length": 6,
       "value": "\"male\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 1347,
+      "offset": 1557,
       "length": 15,
       "value": "\"player_gender\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 1371,
+      "offset": 1581,
       "length": 8,
       "value": "\"female\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 1575,
+      "offset": 1785,
       "length": 14,
       "value": "\"player_level\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 1598,
+      "offset": 1808,
       "length": 10,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 1607,
+      "offset": 1817,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 1750,
+      "offset": 1960,
       "length": 11,
       "value": "\"placement\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 1770,
+      "offset": 1980,
       "length": 10,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 1779,
+      "offset": 1989,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 1930,
+      "offset": 2140,
       "length": 19,
       "value": "\"player_created_at\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 2147,
+      "offset": 2357,
       "length": 14,
       "value": "\"player_payer\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 2183,
+      "offset": 2393,
       "length": 3,
       "value": "\"1\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 2189,
+      "offset": 2399,
       "length": 3,
       "value": "\"0\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 2339,
+      "offset": 2549,
       "length": 22,
       "value": "\"player_iap_total_usd\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 2370,
+      "offset": 2580,
       "length": 13,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 2382,
+      "offset": 2592,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 2525,
+      "offset": 2735,
       "length": 4,
       "value": "\"c1\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 2685,
+      "offset": 2895,
       "length": 4,
       "value": "\"c2\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 2845,
+      "offset": 3055,
       "length": 4,
       "value": "\"c3\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 3005,
+      "offset": 3215,
       "length": 4,
       "value": "\"c4\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 3165,
+      "offset": 3375,
       "length": 4,
       "value": "\"c5\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
       "kind": "StringLiteral",
-      "offset": 174,
+      "offset": 458,
+      "length": 7,
+      "value": "\"AdGemSdk.Builder\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemPlayerMetadata.swift",
+      "kind": "StringLiteral",
+      "offset": 262,
       "length": 19,
       "value": "\"AdGemSdk.AdGemPlayerMetadata\""
     },
@@ -9848,1079 +9789,1058 @@
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 281,
-      "length": 2,
-      "value": "60"
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 286,
-      "length": 2,
-      "value": "30"
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 457,
+      "offset": 608,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 494,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "BooleanLiteral",
-      "offset": 814,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "BooleanLiteral",
-      "offset": 879,
+      "offset": 673,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 912,
+      "offset": 706,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 1103,
-      "length": 14,
-      "value": "\"AdGem-UserId\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 1357,
-      "length": 14,
-      "value": "\"AdGem-UserId\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 1593,
-      "length": 14,
-      "value": "\"AdGem-UserId\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 1800,
+      "offset": 869,
       "length": 21,
       "value": "\"yyyy-MM-dd HH:mm:ss\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 2250,
-      "length": 211,
-      "value": "\"appid=\""
+      "offset": 1319,
+      "length": 165,
+      "value": "\"device=\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 2271,
-      "length": 1,
-      "value": "\"&adgem_uid=\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 2296,
-      "length": 1,
-      "value": "\"&device=\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 2316,
+      "offset": 1339,
       "length": 1,
       "value": "\"&osversion=\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 2339,
+      "offset": 1362,
       "length": 1,
       "value": "\"&platform=iOS&sdk_type=iOS&sdkversion=\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 2396,
+      "offset": 1419,
       "length": 1,
       "value": "\"&devicename=\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 2421,
+      "offset": 1444,
       "length": 1,
       "value": "\"&display_w=\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 2440,
+      "offset": 1463,
       "length": 1,
       "value": "\"&display_h=\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 2460,
+      "offset": 1483,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 2648,
+      "offset": 1558,
+      "length": 12,
+      "value": "\"AdGemAppID\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 1603,
+      "length": 26,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 1613,
+      "length": 1,
+      "value": "\"&appid=\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 1628,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 1665,
+      "length": 18,
+      "value": "\"App ID not found\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 1881,
       "length": 46,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 2658,
+      "offset": 1891,
       "length": 1,
       "value": "\"&idfa=\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 2671,
+      "offset": 1904,
       "length": 1,
       "value": "\"&ad_tracking_enabled=1\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 2733,
+      "offset": 1966,
       "length": 33,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 2743,
+      "offset": 1976,
       "length": 1,
       "value": "\"&ad_tracking_enabled=0\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 2856,
+      "offset": 2089,
       "length": 30,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 2866,
+      "offset": 2099,
       "length": 1,
       "value": "\"&pkg_id=\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 2885,
+      "offset": 2118,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 2954,
+      "offset": 2187,
       "length": 28,
       "value": "\"CFBundleShortVersionString\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 3018,
+      "offset": 2251,
       "length": 37,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 3028,
+      "offset": 2261,
       "length": 1,
       "value": "\"&app_version=\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 3054,
+      "offset": 2287,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 3123,
+      "offset": 2356,
       "length": 17,
       "value": "\"CFBundleVersion\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 3176,
+      "offset": 2409,
       "length": 33,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 3186,
+      "offset": 2419,
       "length": 1,
       "value": "\"&pkg_rev=\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 3208,
+      "offset": 2441,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 3294,
+      "offset": 2527,
       "length": 35,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 3304,
+      "offset": 2537,
       "length": 1,
       "value": "\"&language_code=\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 3328,
+      "offset": 2561,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 3524,
+      "offset": 2831,
       "length": 3,
       "value": "\"&\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 3535,
+      "offset": 2842,
       "length": 5,
       "value": "\"%26\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 3563,
-      "length": 29,
+      "offset": 2870,
+      "length": 45,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 3573,
+      "offset": 2880,
       "length": 1,
       "value": "\"&carrier_name=\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 3591,
+      "offset": 2911,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 2914,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 3685,
+      "offset": 3008,
       "length": 32,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 3695,
+      "offset": 3018,
       "length": 1,
       "value": "\"&timezone=\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 3716,
+      "offset": 3039,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "Dictionary",
-      "offset": 3784,
+      "offset": 3107,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 3811,
+      "offset": 3134,
       "length": 27,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 3821,
+      "offset": 3144,
       "length": 1,
       "value": "\"&\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 3828,
+      "offset": 3151,
       "length": 1,
       "value": "\"=\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 3837,
+      "offset": 3160,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 3992,
+      "offset": 3315,
       "length": 82,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 4004,
+      "offset": 3327,
       "length": 1,
       "value": "\"\/wall?\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 4041,
+      "offset": 3364,
       "length": 1,
       "value": "\"&location=sdk&salt=\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 4073,
+      "offset": 3396,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 4615,
-      "length": 26,
-      "value": "\"https:\/\/api.adgem.com\/v1\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "BooleanLiteral",
-      "offset": 4728,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "BooleanLiteral",
-      "offset": 4760,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "BooleanLiteral",
-      "offset": 4788,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 5061,
+      "offset": 4136,
       "length": 10,
       "value": "\"\/session\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 5249,
+      "offset": 4357,
+      "length": 10,
+      "value": "\"playerid\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 4581,
       "length": 24,
       "value": "\"Starting AdGem Session\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5299,
+      "offset": 4631,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 5398,
+      "offset": 4730,
       "length": 57,
       "value": "\"📝 AdGem Session Started: \""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 5454,
+      "offset": 4786,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 5497,
+      "offset": 4829,
       "length": 6,
       "value": "\"data\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 5568,
+      "offset": 4900,
       "length": 13,
       "value": "\"should_poll\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 5726,
+      "offset": 5058,
       "length": 17,
       "value": "\"offerwall_color\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 6040,
+      "offset": 5372,
       "length": 34,
       "value": "\"❌ Error making AdGem API call.\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 6762,
+      "offset": 6094,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 6946,
+      "offset": 6278,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 7015,
+      "offset": 6347,
       "length": 11,
       "value": "\"\/wallopen\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 7204,
+      "offset": 6536,
       "length": 25,
       "value": "\"Logging Offer Wall Open\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 7255,
+      "offset": 6587,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 7355,
+      "offset": 6687,
       "length": 19,
       "value": "\"Offer Wall Logged\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 7493,
+      "offset": 6825,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 7682,
+      "offset": 7014,
       "length": 26,
       "value": "\"\/checkforoffercompletion\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 7746,
+      "offset": 7078,
       "length": 52,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 7778,
+      "offset": 7110,
       "length": 1,
       "value": "\"&salt=\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 7797,
+      "offset": 7129,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 7898,
+      "offset": 7230,
       "length": 38,
       "value": "\"Checking Server for Completed Offers\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 7962,
+      "offset": 7294,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 8196,
+      "offset": 7528,
       "length": 6,
       "value": "\"data\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 8244,
+      "offset": 7576,
       "length": 11,
       "value": "\"completed\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 8280,
+      "offset": 7612,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 8328,
+      "offset": 7658,
+      "length": 6,
+      "value": "\"user\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 7696,
       "length": 8,
       "value": "\"amount\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 8369,
+      "offset": 7737,
       "length": 10,
       "value": "\"campaign\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 8411,
+      "offset": 7779,
       "length": 11,
       "value": "\"signature\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 8901,
+      "offset": 8281,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 9012,
+      "offset": 8392,
       "length": 11,
       "value": "\"Completed\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "FloatLiteral",
-      "offset": 9428,
+      "offset": 8808,
       "length": 4,
       "value": "20.0"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 9493,
+      "offset": 8873,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 9539,
+      "offset": 8919,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "FloatLiteral",
-      "offset": 9689,
+      "offset": 9069,
       "length": 4,
       "value": "30.0"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 9976,
+      "offset": 9356,
       "length": 3,
       "value": "\"-\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 9987,
+      "offset": 9367,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 10365,
+      "offset": 9745,
       "length": 49,
       "value": "\"❌ Error (HTTP): \""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 10413,
+      "offset": 9793,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 10554,
+      "offset": 9934,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "Array",
-      "offset": 10716,
+      "offset": 10096,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 10828,
+      "offset": 10208,
       "length": 8,
       "value": "\"status\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 10995,
+      "offset": 10375,
       "length": 9,
       "value": "\"success\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 11096,
+      "offset": 10476,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 11139,
+      "offset": 10519,
       "length": 6,
       "value": "\"fail\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 11251,
+      "offset": 10631,
       "length": 6,
       "value": "\"data\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 11294,
+      "offset": 10674,
       "length": 9,
       "value": "\"message\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 11369,
+      "offset": 10749,
       "length": 30,
       "value": "\"❌ Error (FAIL): \""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 11398,
+      "offset": 10778,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 11492,
+      "offset": 10872,
       "length": 52,
       "value": "\"❌ Error (FAIL): An unknown server error occurred\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 11612,
+      "offset": 10992,
       "length": 7,
       "value": "\"error\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 11668,
+      "offset": 11048,
       "length": 53,
       "value": "\"❌ Error (ERROR): An unknown server error occurred\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 11806,
+      "offset": 11186,
       "length": 43,
       "value": "\"❌ Error (JSON): Unknown status received\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 11956,
+      "offset": 11336,
       "length": 43,
       "value": "\"❌ Error (JSON): No status payload found\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 12094,
+      "offset": 11474,
       "length": 47,
       "value": "\"❌ Error (JSON): Not a valid JSON Dictionary\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 12251,
+      "offset": 11631,
       "length": 54,
       "value": "\"❌ Error (JSON): \""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 12304,
+      "offset": 11684,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 12416,
+      "offset": 11796,
       "length": 45,
       "value": "\"❌ Error (HTTP): HTTP Code \""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 12460,
+      "offset": 11840,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 12514,
+      "offset": 11894,
       "length": 41,
       "value": "\"❌ Error (HTTP): Invalid HTTP Response\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 12960,
-      "length": 61,
-      "value": "\"❌ Error \""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 12982,
-      "length": 1,
-      "value": "\" (HTTP): \""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 13020,
-      "length": 1,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 13161,
-      "length": 3,
-      "value": "200"
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "Array",
-      "offset": 13281,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 13393,
-      "length": 8,
-      "value": "\"status\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 13560,
-      "length": 9,
-      "value": "\"success\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 13661,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 13704,
-      "length": 6,
-      "value": "\"fail\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 13816,
-      "length": 6,
-      "value": "\"data\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 13859,
-      "length": 9,
-      "value": "\"message\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 13934,
-      "length": 42,
-      "value": "\"❌ Error \""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 13956,
-      "length": 1,
-      "value": "\" (FAIL): \""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 13975,
-      "length": 1,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 14069,
-      "length": 64,
-      "value": "\"❌ Error \""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 14091,
-      "length": 1,
-      "value": "\" (FAIL): An unknown server error occurred\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 14201,
-      "length": 7,
-      "value": "\"error\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 14257,
-      "length": 65,
-      "value": "\"❌ Error \""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 14279,
-      "length": 1,
-      "value": "\" (ERROR): An unknown server error occurred\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 14407,
-      "length": 55,
-      "value": "\"❌ Error \""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 14429,
-      "length": 1,
-      "value": "\" (JSON): Unknown status received\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 14569,
-      "length": 55,
-      "value": "\"❌ Error \""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 14591,
-      "length": 1,
-      "value": "\" (JSON): No status payload found\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 14719,
-      "length": 59,
-      "value": "\"❌ Error \""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 14741,
-      "length": 1,
-      "value": "\" (JSON): Not a valid JSON Dictionary\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 14888,
-      "length": 66,
-      "value": "\"❌ Error \""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 14910,
-      "length": 1,
-      "value": "\" (JSON): \""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 14953,
-      "length": 1,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 15065,
-      "length": 57,
-      "value": "\"❌ Error \""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 15087,
-      "length": 1,
-      "value": "\" (HTTP): HTTP Code \""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 15121,
-      "length": 1,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 15175,
-      "length": 53,
-      "value": "\"❌ Error \""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "StringLiteral",
-      "offset": 15197,
-      "length": 1,
-      "value": "\" (HTTP): Invalid HTTP Response\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
-      "kind": "BooleanLiteral",
-      "offset": 15399,
+      "offset": 12096,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
       "kind": "StringLiteral",
-      "offset": 15407,
+      "offset": 12104,
+      "length": 12,
+      "value": "\"❌  error\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 12527,
+      "length": 61,
+      "value": "\"❌ Error \""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 12549,
+      "length": 1,
+      "value": "\" (HTTP): \""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 12587,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 12728,
+      "length": 3,
+      "value": "200"
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "Array",
+      "offset": 12848,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 12960,
+      "length": 8,
+      "value": "\"status\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 13127,
+      "length": 9,
+      "value": "\"success\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 13228,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 13271,
+      "length": 6,
+      "value": "\"fail\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 13383,
+      "length": 6,
+      "value": "\"data\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 13426,
+      "length": 9,
+      "value": "\"message\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 13501,
+      "length": 42,
+      "value": "\"❌ Error \""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 13523,
+      "length": 1,
+      "value": "\" (FAIL): \""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 13542,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 13636,
+      "length": 64,
+      "value": "\"❌ Error \""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 13658,
+      "length": 1,
+      "value": "\" (FAIL): An unknown server error occurred\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 13768,
+      "length": 7,
+      "value": "\"error\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 13824,
+      "length": 65,
+      "value": "\"❌ Error \""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 13846,
+      "length": 1,
+      "value": "\" (ERROR): An unknown server error occurred\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 13974,
+      "length": 55,
+      "value": "\"❌ Error \""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 13996,
+      "length": 1,
+      "value": "\" (JSON): Unknown status received\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 14136,
+      "length": 55,
+      "value": "\"❌ Error \""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 14158,
+      "length": 1,
+      "value": "\" (JSON): No status payload found\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 14286,
+      "length": 59,
+      "value": "\"❌ Error \""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 14308,
+      "length": 1,
+      "value": "\" (JSON): Not a valid JSON Dictionary\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 14455,
+      "length": 66,
+      "value": "\"❌ Error \""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 14477,
+      "length": 1,
+      "value": "\" (JSON): \""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 14520,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 14632,
+      "length": 57,
+      "value": "\"❌ Error \""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 14654,
+      "length": 1,
+      "value": "\" (HTTP): HTTP Code \""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 14688,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 14742,
+      "length": 53,
+      "value": "\"❌ Error \""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 14764,
+      "length": 1,
+      "value": "\" (HTTP): Invalid HTTP Response\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 14966,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/AdGemManager.swift",
+      "kind": "StringLiteral",
+      "offset": 14974,
       "length": 12,
       "value": "\"❌  error\""
     },
@@ -11095,77 +11015,77 @@
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/VerifyHelper.swift",
       "kind": "StringLiteral",
-      "offset": 332,
-      "length": 69,
+      "offset": 346,
+      "length": 53,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/VerifyHelper.swift",
       "kind": "StringLiteral",
-      "offset": 356,
+      "offset": 354,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/VerifyHelper.swift",
       "kind": "StringLiteral",
-      "offset": 369,
+      "offset": 367,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/VerifyHelper.swift",
       "kind": "StringLiteral",
-      "offset": 378,
+      "offset": 376,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/VerifyHelper.swift",
       "kind": "StringLiteral",
-      "offset": 400,
+      "offset": 398,
       "length": 16,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/VerifyHelper.swift",
       "kind": "StringLiteral",
-      "offset": 439,
+      "offset": 437,
       "length": 279,
       "value": "\"-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCb0kDNo34HMobS+mH1epdLFO95\n1EhX5RUEJ9+7ZEjiJHnRHVCWtXkbcKMOYhHflMhkHDw1xTIQSelrbAaAOVbnhZ+5\nEFvBCwl2NMTtu\/wq1dgDWZSbid4hystLo0f2fSLJKCxpt151erkR+eWBSvaL8H3F\njose1UW71VxQ99uLJwIDAQAB\n-----END PUBLIC KEY-----\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/VerifyHelper.swift",
       "kind": "BooleanLiteral",
-      "offset": 1106,
+      "offset": 1104,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/VerifyHelper.swift",
       "kind": "BooleanLiteral",
-      "offset": 1217,
+      "offset": 1215,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/VerifyHelper.swift",
       "kind": "BooleanLiteral",
-      "offset": 1284,
+      "offset": 1282,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/VerifyHelper.swift",
       "kind": "StringLiteral",
-      "offset": 1351,
+      "offset": 1349,
       "length": 28,
       "value": "\"❌ Error Decoding Message\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/VerifyHelper.swift",
       "kind": "BooleanLiteral",
-      "offset": 1400,
+      "offset": 1398,
       "length": 5,
       "value": "false"
     },
@@ -11598,176 +11518,176 @@
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
+      "kind": "Array",
+      "offset": 537,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
       "kind": "IntegerLiteral",
-      "offset": 547,
+      "offset": 598,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
+      "kind": "IntegerLiteral",
+      "offset": 603,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
       "kind": "IntegerLiteral",
-      "offset": 607,
+      "offset": 663,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
       "kind": "IntegerLiteral",
-      "offset": 612,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
-      "kind": "IntegerLiteral",
-      "offset": 672,
+      "offset": 668,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
       "kind": "IntegerLiteral",
-      "offset": 677,
+      "offset": 728,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
       "kind": "IntegerLiteral",
-      "offset": 737,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
-      "kind": "IntegerLiteral",
-      "offset": 742,
+      "offset": 733,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
       "kind": "IntegerLiteral",
-      "offset": 802,
+      "offset": 793,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
       "kind": "IntegerLiteral",
-      "offset": 807,
+      "offset": 798,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
       "kind": "StringLiteral",
-      "offset": 1248,
+      "offset": 1239,
       "length": 3,
       "value": "\" \""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
       "kind": "StringLiteral",
-      "offset": 1274,
+      "offset": 1265,
       "length": 4,
       "value": "\"\n\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
       "kind": "StringLiteral",
-      "offset": 1408,
+      "offset": 1399,
       "length": 50,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
       "kind": "StringLiteral",
-      "offset": 1418,
+      "offset": 1409,
       "length": 1,
       "value": "\" \""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
       "kind": "StringLiteral",
-      "offset": 1426,
+      "offset": 1417,
       "length": 1,
       "value": "\" \""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
       "kind": "StringLiteral",
-      "offset": 1438,
+      "offset": 1429,
       "length": 1,
       "value": "\"[\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
       "kind": "StringLiteral",
-      "offset": 1446,
+      "offset": 1437,
       "length": 1,
       "value": "\"] found NiL\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
       "kind": "StringLiteral",
-      "offset": 1878,
+      "offset": 1869,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
       "kind": "StringLiteral",
-      "offset": 2003,
+      "offset": 1994,
       "length": 26,
       "value": "\"yyyy-MM-dd HH:mm:ss.SSS \""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
       "kind": "StringLiteral",
-      "offset": 2275,
+      "offset": 2266,
       "length": 14,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
       "kind": "StringLiteral",
-      "offset": 2287,
+      "offset": 2278,
       "length": 1,
       "value": "\".\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
       "kind": "StringLiteral",
-      "offset": 2369,
+      "offset": 2360,
       "length": 13,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
       "kind": "StringLiteral",
-      "offset": 2381,
+      "offset": 2372,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
       "kind": "StringLiteral",
-      "offset": 2458,
+      "offset": 2449,
       "length": 11,
       "value": "\"[\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
       "kind": "StringLiteral",
-      "offset": 2467,
+      "offset": 2458,
       "length": 1,
       "value": "\"]\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/AdGemDLog.swift",
       "kind": "StringLiteral",
-      "offset": 2617,
+      "offset": 2608,
       "length": 4,
       "value": "\": \""
     },
@@ -11788,28 +11708,28 @@
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/FontHelper.swift",
       "kind": "StringLiteral",
-      "offset": 737,
+      "offset": 730,
       "length": 32,
       "value": "\"❌ Error finding Font: \""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/FontHelper.swift",
       "kind": "StringLiteral",
-      "offset": 768,
+      "offset": 761,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/FontHelper.swift",
       "kind": "StringLiteral",
-      "offset": 1084,
+      "offset": 1077,
       "length": 33,
       "value": "\"❌ Error Creating Font: \""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/FontHelper.swift",
       "kind": "StringLiteral",
-      "offset": 1116,
+      "offset": 1109,
       "length": 2,
       "value": "\"\""
     },
@@ -11865,245 +11785,245 @@
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 1839,
+      "offset": 1840,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 1852,
+      "offset": 1853,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2017,
+      "offset": 2019,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2030,
+      "offset": 2032,
       "length": 3,
       "value": "-10"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2104,
+      "offset": 2106,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2600,
+      "offset": 2602,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3070,
+      "offset": 3072,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3129,
+      "offset": 3131,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3419,
+      "offset": 3421,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 4312,
+      "offset": 4314,
       "length": 135,
       "value": "\"window.open = function(open) { return function (url, name, features) { window.location.href = url; return window; }; } (window.open);\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 4508,
+      "offset": 4510,
       "length": 71,
       "value": "\"window.close = function() { window.location.href = 'adgem:\/\/close'; }\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 4694,
+      "offset": 4696,
       "length": 19,
       "value": "\"navAction: \""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 4712,
+      "offset": 4714,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 4745,
+      "offset": 4747,
       "length": 7,
       "value": "\"adgem\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "Array",
-      "offset": 5048,
+      "offset": 5050,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 5097,
+      "offset": 5099,
       "length": 8,
       "value": "\"action\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 5227,
+      "offset": 5229,
       "length": 7,
       "value": "\"close\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 5284,
+      "offset": 5286,
       "length": 18,
       "value": "\"close offer wall\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 5391,
+      "offset": 5393,
       "length": 9,
       "value": "\"browser\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 5450,
+      "offset": 5452,
       "length": 17,
       "value": "\"open in browser\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 5527,
+      "offset": 5529,
       "length": 5,
       "value": "\"url\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "Dictionary",
-      "offset": 5651,
+      "offset": 5653,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 5798,
+      "offset": 5800,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 5837,
+      "offset": 5839,
       "length": 10,
       "value": "\"appstore\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 5897,
+      "offset": 5899,
       "length": 11,
       "value": "\"app store\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 5968,
+      "offset": 5970,
       "length": 5,
       "value": "\"url\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 6045,
+      "offset": 6047,
       "length": 10,
       "value": "\"store_id\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 6122,
+      "offset": 6124,
       "length": 56,
       "value": "\"showing App Store: \""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 6155,
+      "offset": 6157,
       "length": 1,
       "value": "\", tracking url: \""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 6177,
+      "offset": 6179,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 6268,
+      "offset": 6270,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 6369,
+      "offset": 6371,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 6460,
+      "offset": 6462,
       "length": 8,
       "value": "\"reward\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 6518,
+      "offset": 6520,
       "length": 25,
       "value": "\"reward: \""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 6542,
+      "offset": 6544,
       "length": 2,
       "value": "\"\""
     },
@@ -12111,104 +12031,111 @@
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
       "offset": 6606,
+      "length": 6,
+      "value": "\"user\""
+    },
+    {
+      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
+      "kind": "StringLiteral",
+      "offset": 6652,
       "length": 8,
       "value": "\"amount\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 6655,
+      "offset": 6701,
       "length": 10,
       "value": "\"campaign\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 6705,
+      "offset": 6751,
       "length": 11,
       "value": "\"signature\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 7353,
+      "offset": 7411,
       "length": 21,
       "value": "\"unrecognized action\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 7574,
+      "offset": 7632,
       "length": 34,
       "value": "\"❌ Error Parsing AdGem Response\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 7706,
+      "offset": 7764,
       "length": 24,
       "value": "\"❌ Error Parsing JSON\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 7823,
+      "offset": 7881,
       "length": 15,
       "value": "\"adgem:\/\/close\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 7877,
+      "offset": 7935,
       "length": 18,
       "value": "\"close offer wall\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 8390,
+      "offset": 8448,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 8812,
+      "offset": 8870,
       "length": 127,
       "value": "\"❌ Error! `superview` was nil – call `addSubview(view: UIView)` before calling `bindFrameToSuperviewBounds()` to fix this.\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 9028,
+      "offset": 9086,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 9116,
+      "offset": 9174,
       "length": 21,
       "value": "\"H:|-0-[subview]-0-|\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 9199,
+      "offset": 9257,
       "length": 9,
       "value": "\"subview\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 9300,
+      "offset": 9358,
       "length": 21,
       "value": "\"V:|-0-[subview]-0-|\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/Offer Wall\/AdGemOfferwallViewController.swift",
       "kind": "StringLiteral",
-      "offset": 9383,
+      "offset": 9441,
       "length": 9,
       "value": "\"subview\""
     },
@@ -12438,66 +12365,17 @@
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/AdGem.swift",
-      "kind": "IntegerLiteral",
-      "offset": 214,
-      "length": 6,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/AdGem.swift",
-      "kind": "IntegerLiteral",
-      "offset": 230,
+      "kind": "StringLiteral",
+      "offset": 223,
       "length": 7,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/AdGem.swift",
-      "kind": "IntegerLiteral",
-      "offset": 214,
-      "length": 6,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/AdGem.swift",
-      "kind": "IntegerLiteral",
-      "offset": 230,
-      "length": 7,
-      "value": "2"
+      "value": "\"1.9.0\""
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/AdGem.swift",
       "kind": "StringLiteral",
-      "offset": 311,
-      "length": 7,
-      "value": "\"1.8.0\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/AdGem.swift",
-      "kind": "StringLiteral",
-      "offset": 343,
+      "offset": 255,
       "length": 26,
       "value": "\"https:\/\/api.adgem.com\/v1\""
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/AdGem.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1110,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/AdGem.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1142,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/AdGem.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1170,
-      "length": 4,
-      "value": "true"
     },
     {
       "filePath": "\/Users\/amarshalek\/Projects\/iOS-SDK\/AdGem\/Model Objects\/Helpers\/UIDevice+Name.swift",

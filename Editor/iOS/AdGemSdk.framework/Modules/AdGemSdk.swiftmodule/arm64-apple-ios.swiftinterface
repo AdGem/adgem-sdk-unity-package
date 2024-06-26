@@ -16,10 +16,20 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+@objc public enum AdGemGender : Swift.Int {
+  case male
+  case female
+  case unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @_hasMissingDesignatedInitializers @objc public class AdGemPlayerMetadata : ObjectiveC.NSObject {
   @objc final public let entries: [Swift.String : Swift.String]
-  @_inheritsConvenienceInitializers @objc public class Builder : ObjectiveC.NSObject {
-    @objc public func playerId(playerId: Swift.String) -> AdGemSdk.AdGemPlayerMetadata.Builder
+  @_hasMissingDesignatedInitializers @objc public class Builder : ObjectiveC.NSObject {
+    @objc public static func initWithPlayerId(playerId: Swift.String) -> AdGemSdk.AdGemPlayerMetadata.Builder
     @objc public func playerAge(age: Swift.Int) -> AdGemSdk.AdGemPlayerMetadata.Builder
     @objc public func playerGender(gender: AdGemSdk.AdGemGender) -> AdGemSdk.AdGemPlayerMetadata.Builder
     @objc public func playerLevel(level: Swift.Int) -> AdGemSdk.AdGemPlayerMetadata.Builder
@@ -33,7 +43,6 @@ import _SwiftConcurrencyShims
     @objc public func customField4(field: Swift.String) -> AdGemSdk.AdGemPlayerMetadata.Builder
     @objc public func customField5(field: Swift.String) -> AdGemSdk.AdGemPlayerMetadata.Builder
     @objc public func build() -> AdGemSdk.AdGemPlayerMetadata
-    @objc override dynamic public init()
     @objc deinit
   }
   @objc deinit
@@ -267,16 +276,6 @@ extension AdGemSdk.Message {
   }
   public init(base64Encoded base64String: Swift.String) throws
 }
-@objc public enum AdGemGender : Swift.Int {
-  case male
-  case female
-  case unknown
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
 @objc public protocol AdGemDelegate {
   @objc func offerwallLoadingStarted()
   @objc func offerwallLoadingFinished()
@@ -291,11 +290,8 @@ extension AdGemSdk.Message {
     @objc get
     @objc set(d)
   }
-  @objc public class func startSession(appId: Swift.Int, usesStandardVideo: Swift.Bool = true, usesRewardedVideo: Swift.Bool = true, usesOfferwall: Swift.Bool = true)
-  @objc public class func cacheOfferwall()
-  @objc public class func showOfferwall()
   @objc public class func setPlayerMetaData(metaData: AdGemSdk.AdGemPlayerMetadata)
-  @objc public class func envURL() -> Swift.String
+  @objc public class func showOfferwall()
   @objc override dynamic public init()
   @objc deinit
 }
@@ -327,11 +323,11 @@ public class PrivateKey : AdGemSdk.Key {
   required public init(data: Foundation.Data) throws
   @objc deinit
 }
+extension AdGemSdk.AdGemGender : Swift.Equatable {}
+extension AdGemSdk.AdGemGender : Swift.Hashable {}
+extension AdGemSdk.AdGemGender : Swift.RawRepresentable {}
 extension AdGemSdk.Signature.DigestType : Swift.Equatable {}
 extension AdGemSdk.Signature.DigestType : Swift.Hashable {}
 extension AdGemSdk._objc_Signature.DigestType : Swift.Equatable {}
 extension AdGemSdk._objc_Signature.DigestType : Swift.Hashable {}
 extension AdGemSdk._objc_Signature.DigestType : Swift.RawRepresentable {}
-extension AdGemSdk.AdGemGender : Swift.Equatable {}
-extension AdGemSdk.AdGemGender : Swift.Hashable {}
-extension AdGemSdk.AdGemGender : Swift.RawRepresentable {}

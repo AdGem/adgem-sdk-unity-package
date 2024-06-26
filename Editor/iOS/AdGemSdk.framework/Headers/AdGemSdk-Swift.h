@@ -313,11 +313,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) id <AdGemDelegate> _Nullable delegate;)
 + (id <AdGemDelegate> _Nullable)delegate SWIFT_WARN_UNUSED_RESULT;
 + (void)setDelegate:(id <AdGemDelegate> _Nullable)d;
-+ (void)startSessionWithAppId:(NSInteger)appId usesStandardVideo:(BOOL)usesStandardVideo usesRewardedVideo:(BOOL)usesRewardedVideo usesOfferwall:(BOOL)usesOfferwall;
-+ (void)cacheOfferwall;
-+ (void)showOfferwall;
 + (void)setPlayerMetaDataWithMetaData:(AdGemPlayerMetadata * _Nonnull)metaData;
-+ (NSString * _Nonnull)envURL SWIFT_WARN_UNUSED_RESULT;
++ (void)showOfferwall;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -349,7 +346,7 @@ SWIFT_CLASS("_TtC8AdGemSdk19AdGemPlayerMetadata")
 
 SWIFT_CLASS("_TtCC8AdGemSdk19AdGemPlayerMetadata7Builder")
 @interface Builder : NSObject
-- (Builder * _Nonnull)playerIdWithPlayerId:(NSString * _Nonnull)playerId SWIFT_WARN_UNUSED_RESULT;
++ (Builder * _Nonnull)initWithPlayerIdWithPlayerId:(NSString * _Nonnull)playerId SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
 - (Builder * _Nonnull)playerAgeWithAge:(NSInteger)age SWIFT_WARN_UNUSED_RESULT;
 - (Builder * _Nonnull)playerGenderWithGender:(enum AdGemGender)gender SWIFT_WARN_UNUSED_RESULT;
 - (Builder * _Nonnull)playerLevelWithLevel:(NSInteger)level SWIFT_WARN_UNUSED_RESULT;
@@ -363,7 +360,8 @@ SWIFT_CLASS("_TtCC8AdGemSdk19AdGemPlayerMetadata7Builder")
 - (Builder * _Nonnull)customField4WithField:(NSString * _Nonnull)field SWIFT_WARN_UNUSED_RESULT;
 - (Builder * _Nonnull)customField5WithField:(NSString * _Nonnull)field SWIFT_WARN_UNUSED_RESULT;
 - (AdGemPlayerMetadata * _Nonnull)build SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
