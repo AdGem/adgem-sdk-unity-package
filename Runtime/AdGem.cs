@@ -1,4 +1,6 @@
-﻿namespace AdGemUnity.Runtime
+﻿using UnityEngine;
+
+namespace AdGemUnity.Runtime
 {
 #nullable enable
 	/// <summary>
@@ -22,6 +24,7 @@
 				return;
 
 			_implementation.SetPlayerMetaData(metadata);
+			Debug.Log(AdGemAsyncCallbackHelper.Instance.name);
 		}
 
 		/// <summary>

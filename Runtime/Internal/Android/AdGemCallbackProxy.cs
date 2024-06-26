@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.Scripting;
 
 namespace AdGemUnity.Runtime
 {
-	internal class AdGemCallbackProxy : AndroidJavaProxy
+	[Preserve]
+	public class AdGemCallbackProxy : AndroidJavaProxy
 	{
 		private readonly OfferwallDelegate _offerwallDelegate;
 
@@ -12,7 +14,8 @@ namespace AdGemUnity.Runtime
 			_offerwallDelegate = offerwallDelegate;
 		}
 
-		private void onOfferWallLoadingStarted()
+		[Preserve]
+		public void onOfferwallLoadingStarted()
 		{
 			AdGemAsyncCallbackHelper.Instance.Queue(() =>
 			{
@@ -20,7 +23,8 @@ namespace AdGemUnity.Runtime
 			});
 		}
 
-		private void onOfferWallLoadingFinished()
+		[Preserve]
+		public void onOfferwallLoadingFinished()
 		{
 			AdGemAsyncCallbackHelper.Instance.Queue(() =>
 			{
@@ -28,7 +32,8 @@ namespace AdGemUnity.Runtime
 			});
 		}
 
-		private void onOfferWallLoadingFailed(string error)
+		[Preserve]
+		public void onOfferwallLoadingFailed(string error)
 		{
 			AdGemAsyncCallbackHelper.Instance.Queue(() =>
 			{
@@ -36,7 +41,8 @@ namespace AdGemUnity.Runtime
 			});
 		}
 
-		private void onOfferWallRewardReceived(int amount)
+		[Preserve]
+		public void onOfferwallRewardReceived(int amount)
 		{
 			AdGemAsyncCallbackHelper.Instance.Queue(() =>
 			{
@@ -44,7 +50,8 @@ namespace AdGemUnity.Runtime
 			});
 		}
 
-		private void onOfferWallClosed()
+		[Preserve]
+		public void onOfferwallClosed()
 		{
 			AdGemAsyncCallbackHelper.Instance.Queue(() =>
 			{
