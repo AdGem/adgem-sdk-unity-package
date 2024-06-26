@@ -76,8 +76,7 @@ void _initDelegate(AdGemVoidCallbackDelegate onLoadStarted, void* onLoadStartedP
 
 void _setMetadata(const char* playerId, int age, int gender, int level, long placement, const char* createdAt, bool isPayer, float iapTotal,
                   const char* custom1, const char* custom2, const char* custom3, const char* custom4, const char* custom5) {
-    auto builder = [[Builder alloc] init];
-    builder = [builder playerIdWithPlayerId:createNSStringFrom(playerId)];
+    auto builder = [Builder initWithPlayerIdWithPlayerId:createNSStringFrom(playerId)];
     if (age >= 0)
         builder = [builder playerAgeWithAge:age];
     if (gender >= 0)
