@@ -8,7 +8,6 @@ The AdGem SDK for the Unity Package Manager.
 - The AdGem Unity SDK is compatible with apps built in  **Unity 2020 and higher**
 
 ## Integration
---------
 
 ### Install the AdGem Unity SDK
 
@@ -29,7 +28,6 @@ In order to resolve Android/iOS AdGem Unity SDK dependencies the [External Depen
 Set AdGem app ID from the AdGem publisher dashboard in ***Window > AdGem** settings menu.
 
 ## Usage
---------
 
 All communication with the AdGem Unity SDK happens via the `AdGem` class.
 
@@ -122,3 +120,7 @@ Use the `AdGem` class to show Offer Wall in your project:
 ```csharp
 AdGem.ShowOfferwall()
 ```
+
+### Optional Parameters
+
+You can optimize your revenue potential by segmenting your users using the optional parameters available in the Unity SDK. Please visit [Optional Parameters](https://docs.adgem.com/publisher-support/unity-optional-parameters/) to learn more.
