@@ -25,7 +25,7 @@ In order to resolve Android/iOS AdGem Unity SDK dependencies the [External Depen
 
 ### Configure the AdGem Unity SDK
 
-Set AdGem app ID from the AdGem publisher dashboard in ***Window > AdGem** settings menu.
+Set AdGem app ID from the AdGem publisher dashboard in **Window > AdGem** settings menu.
 
 ## Usage
 
