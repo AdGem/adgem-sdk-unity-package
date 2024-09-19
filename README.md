@@ -35,7 +35,7 @@ _Please note there is no need to store instance of AdGem globally. The SDK will 
 
 ### Set the Player Id _(the unique identifier for a user)_
 
-You need to set the [player_id](../unity-optional-parameters/) (a unique id for your user) parameter for each of your individual users.
+You need to set the [player_id](https://docs.adgem.com/publisher-support/unity-optional-parameters/) (a unique id for your user) parameter for each of your individual users.
 
 ```csharp
 var metadata = new PlayerMetadata("playerID-123")
