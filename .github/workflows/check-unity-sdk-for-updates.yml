@@ -32,6 +32,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PUBLIC_REPO_BOT_GITHUB_TOKEN }}
 
       - name: Commit and push changes
+        if: env.HAS_CHANGES
         run: |
           git config --global user.name 'adgem-developers'
           git config --global user.email 'developers@adgem.com'
@@ -40,13 +41,15 @@ jobs:
           git push origin HEAD:refs/heads/update-adgem-sdk
 
       - name: Create Pull Request
+        if: env.HAS_CHANGES
         uses: peter-evans/create-pull-request@v7
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PUBLIC_REPO_BOT_GITHUB_TOKEN }}
           branch: update-adgem-sdk
           title: 'build: update adgem sdk dependency version'
-          body: 'This PR updates the AdGem SDK version to the latest release.'
+          body: | 
+            This PR updates the AdGem SDK version to the latest release.
+            
+            cc: @adgem/sdk-team
           labels: 'automated pr'
-          assignees: |
-            tustanivsky
-            munkiki7
+          assignees: adgem/sdk-team
