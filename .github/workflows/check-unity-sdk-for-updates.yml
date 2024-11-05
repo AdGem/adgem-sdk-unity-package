@@ -26,7 +26,7 @@ jobs:
 
       - name: Check for AdGem SDK updates
         run: |
-          node check-adgem-sdk-updates.js
+          npm run check-adgem-version
           echo "HAS_CHANGES=$(git status --porcelain -z)" >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ secrets.PUBLIC_REPO_BOT_GITHUB_TOKEN }}
@@ -34,11 +34,11 @@ jobs:
       - name: Commit and push changes
         if: env.HAS_CHANGES
         run: |
-          git config --global user.name 'adgem-developers'
-          git config --global user.email 'developers@adgem.com'
+          git config --global user.name "${{ vars.BOT_NAME || 'adgem-developers' }}"
+          git config --global user.email "${{ vars.BOT_EMAIL || 'developers@adgem.com' }}"
           git add .
           git commit -m 'build: update adgem sdk dependency version'
-          git push origin HEAD:refs/heads/update-adgem-sdk
+          git push --force origin HEAD:refs/heads/update-adgem-sdk
 
       - name: Create Pull Request
         if: env.HAS_CHANGES

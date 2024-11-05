@@ -13,6 +13,9 @@
     "email": "info@adgem.com",
     "url": "https://adgem.com/"
   },
+  "scripts": {
+    "check-adgem-version": "node ./scripts/check-adgem-version.js"
+  },
   "samples": [
     {
       "displayName": "AdGemDemo",
