@@ -13,6 +13,9 @@
     "email": "info@adgem.com",
     "url": "https://adgem.com/"
   },
+  "scripts": {
+    "check-adgem-version": "node ./bin/check-adgem-version.js"
+  },
   "samples": [
     {
       "displayName": "AdGemDemo",
@@ -20,5 +23,9 @@
       "path": "Samples~/adgem-demo"
     }
   ],
-  "type": "library"
+  "type": "library",
+  "devDependencies": {
+    "axios": "1.7.7",
+    "xml2js": "0.6.2"
+  }
 }
