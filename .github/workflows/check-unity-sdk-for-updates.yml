@@ -29,7 +29,12 @@ jobs:
 
       - name: Check for AdGem SDK updates
         run: |
-          export LATEST_ANDROID_SDK_VERSION=$(npm run check-adgem-version)
+          LATEST_VERSION=$(npm run check-for-updates)
+          if [ $? -ne 0 ]; then
+            echo "Failed to get latest SDK version"
+            exit 1
+          fi
+          echo "LATEST_ANDROID_SDK_VERSION=$LATEST_VERSION" >> "$GITHUB_ENV"
           echo "HAS_CHANGES=$(git status --porcelain -z | tr '\0' ' ')" >> "$GITHUB_ENV"
         env:
           GITHUB_TOKEN: ${{ secrets.PUBLIC_REPO_BOT_GITHUB_TOKEN }}
