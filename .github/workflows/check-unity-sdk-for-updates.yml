@@ -29,7 +29,7 @@ jobs:
 
       - name: Check for AdGem SDK updates
         run: |
-          LATEST_VERSION=$(npm run check-for-updates)
+          LATEST_VERSION=$(npm run check-adgem-version)
           if [ $? -ne 0 ]; then
             echo "Failed to get latest SDK version"
             exit 1
