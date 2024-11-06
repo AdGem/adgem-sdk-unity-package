@@ -30,7 +30,7 @@ jobs:
       - name: Check for AdGem SDK updates
         run: |
           npm run check-adgem-version
-          echo "HAS_CHANGES=$(git status --porcelain -z)" >> $GITHUB_ENV
+          echo "HAS_CHANGES=$(git status --porcelain -z | tr '\0' ' ')" >> "$GITHUB_ENV"
         env:
           GITHUB_TOKEN: ${{ secrets.PUBLIC_REPO_BOT_GITHUB_TOKEN }}
 
