@@ -29,7 +29,7 @@ jobs:
 
       - name: Check for AdGem SDK updates
         run: |
-          npm run check-adgem-version
+          export LATEST_ANDROID_SDK_VERSION=$(npm run check-adgem-version)
           echo "HAS_CHANGES=$(git status --porcelain -z | tr '\0' ' ')" >> "$GITHUB_ENV"
         env:
           GITHUB_TOKEN: ${{ secrets.PUBLIC_REPO_BOT_GITHUB_TOKEN }}
@@ -41,14 +41,14 @@ jobs:
           git config --global user.email "${{ vars.BOT_EMAIL || 'developers@adgem.com' }}"
           git add .
           git commit -m 'build: update adgem sdk dependency version'
-          git push origin HEAD:refs/heads/update-adgem-sdk
+          git push origin HEAD:refs/heads/update-adgem-sdk-$LATEST_ANDROID_SDK_VERSION
 
       - name: Create Pull Request
         if: env.HAS_CHANGES
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.PUBLIC_REPO_BOT_GITHUB_TOKEN }}
-          branch: update-adgem-sdk
+          branch: update-adgem-sdk-${{ env.LATEST_ANDROID_SDK_VERSION }}
           title: 'build: update adgem sdk dependency version'
           body: | 
             This PR updates the AdGem SDK version to the latest release.
