@@ -50,9 +50,11 @@ jobs:
           token: ${{ secrets.PUBLIC_REPO_BOT_GITHUB_TOKEN }}
           branch: update-adgem-sdk-${{ env.LATEST_ANDROID_SDK_VERSION }}
           title: 'build: update adgem sdk dependency version'
-          body: | 
+          delete-branch: true
+          body: |
             This PR updates the AdGem SDK version to the latest release.
             
             cc: @adgem/sdk-team
+
           labels: 'automated pr'
-          assignees: adgem/sdk-team
+          team-reviewers: adgem/sdk-team
