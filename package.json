@@ -14,7 +14,7 @@
     "url": "https://adgem.com/"
   },
   "scripts": {
-    "check-adgem-version": "node ./bin/check-adgem-version.js"
+    "check-adgem-version": "node ./bin/check-unity-sdk-for-updates.yml"
   },
   "samples": [
     {
