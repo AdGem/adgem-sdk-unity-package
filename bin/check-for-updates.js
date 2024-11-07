@@ -38,6 +38,8 @@ async function checkAdGemSdkUpdates() {
     const updatedXmlContent = builder.buildObject(xml);
     fs.writeFileSync(configFilePath, updatedXmlContent);
   }
+
+  console.log(latestVersion);
 }
 
 checkAdGemSdkUpdates();
