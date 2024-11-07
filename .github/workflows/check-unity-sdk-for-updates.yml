@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.PUBLIC_REPO_BOT_GITHUB_TOKEN }}
+          token: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -37,7 +37,7 @@ jobs:
           echo "LATEST_ANDROID_SDK_VERSION=$LATEST_VERSION" >> "$GITHUB_ENV"
           echo "HAS_CHANGES=$(git status --porcelain -z | tr '\0' ' ')" >> "$GITHUB_ENV"
         env:
-          GITHUB_TOKEN: ${{ secrets.PUBLIC_REPO_BOT_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
 
       - name: Commit and push changes
         if: env.HAS_CHANGES
@@ -52,7 +52,7 @@ jobs:
         if: env.HAS_CHANGES
         uses: peter-evans/create-pull-request@v7
         with:
-          token: ${{ secrets.PUBLIC_REPO_BOT_GITHUB_TOKEN }}
+          token: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
           branch: update-adgem-sdk-${{ env.LATEST_ANDROID_SDK_VERSION }}
           title: 'build: update adgem sdk dependency version'
           delete-branch: true
