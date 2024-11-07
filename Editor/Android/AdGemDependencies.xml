@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <dependencies>
   <androidPackages>
-    <androidPackage spec="com.adgem:adgem-android:v4.0.2">
+    <androidPackage spec="com.adgem:adgem-android:4.0.2">
       <androidSdkPackageIds>
         <androidSdkPackageId>extra-google-m2repository</androidSdkPackageId>
       </androidSdkPackageIds>
