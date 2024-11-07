@@ -6,9 +6,11 @@ on:
       - main
   schedule: # Run Daily
     - cron: '0 0 * * *'
-  pull_request:
-    branches:
-      - dakota/fix-file-permissions
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - synchronize
   workflow_dispatch:
 
 jobs:
