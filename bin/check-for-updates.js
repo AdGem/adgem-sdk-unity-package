@@ -29,7 +29,8 @@ async function checkAdGemSdkUpdates() {
     }
   });
 
-  const latestVersion = response.data.tag_name;
+  let latestVersion = response.data.tag_name;
+  latestVersion = latestVersion.replace(/^v/, ''); // Remove leading 'v'
 
   if (latestVersion !== currentVersion) {
     // Update the AdGemDependencies.xml with the new version
