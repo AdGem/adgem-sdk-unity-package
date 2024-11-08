@@ -29,7 +29,7 @@ jobs:
 
       - name: Check for AdGem SDK updates
         run: |
-          LATEST_VERSION=$(npm run check-adgem-version)
+          LATEST_VERSION=$(node ./bin/check-for-updates.js)
           if [ $? -ne 0 ]; then
             echo "Failed to get latest SDK version"
             exit 1
@@ -45,7 +45,7 @@ jobs:
           git config --global user.name "${{ vars.BOT_NAME || 'adgem-developers' }}"
           git config --global user.email "${{ vars.BOT_EMAIL || 'developers@adgem.com' }}"
           git add .
-          git commit -m 'build: update adgem sdk dependency version'
+          git commit -m 'fix(deps): update adgem sdk dependency version'
           git push origin HEAD:refs/heads/update-adgem-sdk-$LATEST_ANDROID_SDK_VERSION
 
       - name: Create Pull Request

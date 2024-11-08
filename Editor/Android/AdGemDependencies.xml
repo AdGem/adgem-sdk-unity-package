@@ -1,15 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <dependencies>
-    <androidPackages>
-        <androidPackage spec="com.adgem:adgem-android:4.0.1">
-            <androidSdkPackageIds>
-                <androidSdkPackageId>extra-google-m2repository</androidSdkPackageId>
-            </androidSdkPackageIds>
-            <repositories>
-                <repository>https://maven.google.com</repository>
-            </repositories>
-        </androidPackage>
-    </androidPackages>
-    <iosPods>
-        <iosPod name="AdGem"/>
-    </iosPods>
+  <androidPackages>
+    <androidPackage spec="com.adgem:adgem-android:4.0.2">
+      <androidSdkPackageIds>
+        <androidSdkPackageId>extra-google-m2repository</androidSdkPackageId>
+      </androidSdkPackageIds>
+      <repositories>
+        <repository>https://maven.google.com</repository>
+      </repositories>
+    </androidPackage>
+  </androidPackages>
+  <iosPods>
+    <iosPod name="AdGem"/>
+  </iosPods>
 </dependencies>
