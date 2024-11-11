@@ -11,6 +11,6 @@
     </androidPackage>
   </androidPackages>
   <iosPods>
-    <iosPod name="AdGem"/>
+    <iosPod name="AdGem" version="2.0.0"/>
   </iosPods>
 </dependencies>
