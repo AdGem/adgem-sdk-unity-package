@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - dakota/test-update-functionality
   schedule: # Run Daily
     - cron: '0 0 * * *'
   workflow_dispatch:
@@ -30,6 +31,7 @@ jobs:
       - name: Check for AdGem SDK updates
         run: |
           LATEST_VERSION=$(node ./bin/check-for-updates.js)
+          node ./bin/check-for-updates.js
           if [ $? -ne 0 ]; then
             echo "Failed to get latest SDK version"
             exit 1
