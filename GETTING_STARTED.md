@@ -1,8 +1,11 @@
 # AdGem Unity Package
+
+---
 The AdGem SDK for the Unity Package Manager.
 
 ## Getting Started
 
+---
 - Create an [AdGem account](https://dashboard.adgem.com/register)
 - Add your Unity App to your [account](https://dashboard.adgem.com/publisher/apps) as a new app
 - Install **Unity 2020 or higher**
