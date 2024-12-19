@@ -38,13 +38,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
           CHECK_TYPE: 'self'
         run: |
-          LATEST_VERSION=$(node ./bin/check-for-updates.js)
-          if [ $? -ne 0 ]; then
-            echo "Failed to get latest SDK version"
+          if ! LATEST_VERSION=$(node ./bin/check-for-updates.js); then
+            echo "Error: Failed to get latest SDK version. Please check the script output above for details."
             exit 1
           fi
           echo "LATEST_VERSION=$LATEST_VERSION" >> "$GITHUB_ENV"
-
       - name: Update README.md
         run: |
           sed -i "s|https://github.com/AdGem/adgem-sdk-unity-package.git#.*|https://github.com/AdGem/adgem-sdk-unity-package.git#$LATEST_VERSION|g" README.md
