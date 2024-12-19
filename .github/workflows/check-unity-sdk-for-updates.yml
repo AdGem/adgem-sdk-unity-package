@@ -1,5 +1,9 @@
 name: Check Unity SDK Updates
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 on:
   push:
     branches:
@@ -37,7 +41,13 @@ jobs:
             exit 1
           fi
           echo "LATEST_ANDROID_SDK_VERSION=$LATEST_VERSION" >> "$GITHUB_ENV"
-          echo "HAS_CHANGES=$(git status --porcelain -z | tr '\0' ' ')" >> "$GITHUB_ENV"
+          
+          CURRENT_VERSION=$(grep -oP "implementation 'com.adgem.android:adgem-sdk:\K[^']+" AndroidManifest.xml)
+          
+          echo "HAS_CHANGES=$(LATEST_ANDROID_SDK_VERSION != $CURRENT_VERSION)" >> "$GITHUB_ENV"
+          echo "Latest version: $LATEST_VERSION"
+          echo "Current version: $CURRENT_VERSION"
+          echo "Has changes: ${{ env.HAS_CHANGES }}"
       - name: Update Android Manifest File
         if: env.HAS_CHANGES
         run: |
