@@ -63,7 +63,7 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
-          branch: update-unity-package-url-${{ env.LATEST_VERSION }}
+          branch: ${{ env.BRANCH_NAME }}
           title: 'chore: update Unity package URL to version ${{ env.LATEST_VERSION }}'
           body: |
             This PR updates the Unity package URL in the README.md file to the latest version.
