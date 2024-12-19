@@ -42,12 +42,12 @@ jobs:
             exit 1
           fi
           echo "LATEST_VERSION=$LATEST_VERSION" >> "$GITHUB_ENV"
-          echo "Latest version: $LATEST_VERSION"
+          echo "Latest Unity SDK version: $LATEST_VERSION"
           
           CURRENT_VERSION=$(grep -oP "\"version\": \"\K[^\"]+" package.json)
-          echo "Current version: $CURRENT_VERSION"
+          echo "Current Referenced Unity SDK version: $CURRENT_VERSION"
           
-          if [[ "$CURRENT_VERSION" == "$LATEST_VERSION" ]]; then
+          if [ "$CURRENT_VERSION" = "$LATEST_VERSION" ]; then
             echo "Versions match"
           else
             echo "Versions do not match"
@@ -118,12 +118,12 @@ jobs:
             exit 1
           fi
           echo "LATEST_ANDROID_SDK_VERSION=$LATEST_VERSION" >> "$GITHUB_ENV"
-          echo "Latest version: $LATEST_VERSION"
+          echo "Latest Android SDK version: LATEST_ANDROID_SDK_VERSION"
           
           CURRENT_VERSION=$(grep -oP "com.adgem:adgem-android:\K[^\"]+" Editor/Android/AdGemDependencies.xml)
-          echo "Current version: $CURRENT_VERSION"
+          echo "Current referenced Android SDK version: $CURRENT_VERSION"
           
-          if [[ "$CURRENT_VERSION" == "$LATEST_ANDROID_SDK_VERSION" ]]; then
+          if [ "$CURRENT_VERSION" = "$LATEST_ANDROID_SDK_VERSION" ]; then
             echo "Versions match"
           else
             echo "Versions do not match"
