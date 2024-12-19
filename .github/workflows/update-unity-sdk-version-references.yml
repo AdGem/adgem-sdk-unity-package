@@ -5,8 +5,11 @@ concurrency:
   cancel-in-progress: true
 
 on:
+  push:
+    branches:
+      - dakota/fix-workflow-issues
   release:
-    types: [published]
+    types: [ published ]
   schedule: # Run Daily
     - cron: '0 0 * * *'
   workflow_dispatch:
@@ -71,12 +74,11 @@ jobs:
               echo "Error: Failed to update package.json"
               exit 1
           fi
-          # test
           cat package.json
       - name: Commit and push changes
         if: env.HAS_CHANGES
-        with:
-          token: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
         run: |
           BRANCH_NAME="update-unity-package-url-${LATEST_VERSION}-$(date +%s)"
           git add README.md package.json
@@ -146,8 +148,8 @@ jobs:
           cat Editor/Android/AdGemDependencies.xml
       - name: Commit and push changes
         if: env.HAS_CHANGES
-        with:
-          token: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
         run: |
           git config --global user.name "${{ vars.BOT_NAME || 'adgem-developers' }}"
           git config --global user.email "${{ vars.BOT_EMAIL || 'developers@adgem.com' }}"
@@ -161,10 +163,10 @@ jobs:
         with:
           token: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
           branch: update-adgem-sdk-${{ env.LATEST_ANDROID_SDK_VERSION }}
-          title: 'build: update adgem sdk dependency version'
+          title: 'build: update adgem sdk dependency version to ${{ env.LATEST_ANDROID_SDK_VERSION }}'
           delete-branch: true
           body: |
-            This PR updates the AdGem SDK version to the latest release.
+            This PR updates the AdGem SDK version to the latest release (v${{ env.LATEST_ANDROID_SDK_VERSION }}).
             
             cc: @adgem/sdk-team
 
