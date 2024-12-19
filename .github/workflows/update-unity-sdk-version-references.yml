@@ -80,7 +80,7 @@ jobs:
             echo "Error: README.md was not updated"
             exit 1
           fi
-          if ! grep -q "version": "${LATEST_VERSION}" package.json; then
+          if ! grep -q '"version": "${LATEST_VERSION}"' package.json; then
             echo "Error: package.json was not updated"
             exit 1
           fi
@@ -150,8 +150,8 @@ jobs:
           set -e
           BRANCH_NAME="update-adgem-sdk-${LATEST_ANDROID_SDK_VERSION}-$(date +%s)"
           
-          if ! sed -i "s|implementation 'com.adgem.android:adgem-sdk:.*'|implementation 'com.adgem:adgem-android:${LATEST_ANDROID_SDK_VERSION}'|g" AdGemDependencies.xml; then
-            echo "Error: Failed to update AdGemDependencies.xml"
+          if ! sed -i "s|implementation 'com.adgem.android:adgem-sdk:.*'|implementation 'com.adgem:adgem-android:${LATEST_ANDROID_SDK_VERSION}'|g" Editor/Android/AdGemDependencies.xml; then
+            echo "Error: Failed to update Editor/Android/AdGemDependencies.xml"
             exit 1
           fi
       - name: Commit and push changes
