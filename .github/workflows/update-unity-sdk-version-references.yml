@@ -75,6 +75,8 @@ jobs:
           cat package.json
       - name: Commit and push changes
         if: env.HAS_CHANGES
+        with:
+          token: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
         run: |
           BRANCH_NAME="update-unity-package-url-${LATEST_VERSION}-$(date +%s)"
           git add README.md package.json
@@ -119,7 +121,8 @@ jobs:
             exit 1
           fi
           echo "LATEST_ANDROID_SDK_VERSION=$LATEST_VERSION" >> "$GITHUB_ENV"
-          echo "Latest Android SDK version: LATEST_ANDROID_SDK_VERSION"
+          echo "Latest Android SDK version: $LATEST_ANDROID_SDK_VERSION"
+          echo "Latest version: $LATEST_VERSION"
           
           CURRENT_VERSION=$(grep -oP "com.adgem:adgem-android:\K[^\"]+" Editor/Android/AdGemDependencies.xml)
           echo "Current referenced Android SDK version: $CURRENT_VERSION"
@@ -143,11 +146,13 @@ jobs:
           cat Editor/Android/AdGemDependencies.xml
       - name: Commit and push changes
         if: env.HAS_CHANGES
+        with:
+          token: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
         run: |
           git config --global user.name "${{ vars.BOT_NAME || 'adgem-developers' }}"
           git config --global user.email "${{ vars.BOT_EMAIL || 'developers@adgem.com' }}"
           git add Editor/Android/AdGemDependencies.xml
-          git commit -m 'fix(deps): update adgem sdk dependency version'
+          git commit -m 'fix(deps): update adgem android sdk dependency version to ${{ env.LATEST_ANDROID_SDK_VERSION }}'
           git push origin HEAD:refs/heads/update-adgem-sdk-$LATEST_ANDROID_SDK_VERSION
 
       - name: Create Pull Request
