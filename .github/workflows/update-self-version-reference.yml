@@ -53,7 +53,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
           branch: update-unity-package-url-${{ env.LATEST_VERSION }}
           title: 'chore: update Unity package URL to version ${{ env.LATEST_VERSION }}'
           body: |
