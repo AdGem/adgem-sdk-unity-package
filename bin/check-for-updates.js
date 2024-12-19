@@ -42,26 +42,50 @@ async function checkExternalUpdates() {
 
 async function checkOwnRepoUpdates() {
   const packageJsonPath = path.join(__dirname, '../package.json');
-  const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
-  const currentVersion = packageJson.version;
-
-  const response = await axios.get('https://api.github.com/repos/AdGem/adgem-sdk-unity-package/releases/latest', {
-    headers: {
-      'Accept': 'application/vnd.github+json',
-      'Authorization': `Bearer ${GITHUB_TOKEN}`,
-      'X-GitHub-Api-Version': '2022-11-28'
-    }
-  });
-
-  let latestVersion = response.data.tag_name;
-  latestVersion = latestVersion.replace(/^v/, ''); // Remove leading 'v'
-
-  if (latestVersion !== currentVersion) {
-    packageJson.version = latestVersion;
-    fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
+  let packageJson;
+  
+  try {
+    packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+  } catch (error) {
+    console.error('Error reading package.json:', error);
+    process.exit(1);
   }
+  
+  const currentVersion = packageJson.version;
+  const repoName = process.env.REPO_NAME || 'adgem-sdk-unity-package';
 
-  console.log(latestVersion);
+  try {
+    const response = await axios.get(`https://api.github.com/repos/AdGem/${repoName}/releases/latest`, {
+      headers: {
+        'Accept': 'application/vnd.github+json',
+        'Authorization': `Bearer ${GITHUB_TOKEN}`,
+        'X-GitHub-Api-Version': '2022-11-28'
+      }
+    });
+
+    let latestVersion = response.data.tag_name.replace(/^v/, '');
+
+    // Compare versions using semver
+    const semver = require('semver');
+    if (semver.gt(latestVersion, currentVersion)) {
+      // Backup package.json
+      const backupPath = `${packageJsonPath}.backup`;
+      fs.copyFileSync(packageJsonPath, backupPath);
+
+      // Update version
+      packageJson.version = latestVersion;
+      fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
+      
+      console.log(`Updated version from ${currentVersion} to ${latestVersion}`);
+    } else {
+      console.log('Already at the latest version');
+    }
+    
+    console.log(latestVersion);
+  } catch (error) {
+    console.error('Error:', error.message);
+    process.exit(1);
+  }
 }
 
 if (CHECK_TYPE === 'external') {
