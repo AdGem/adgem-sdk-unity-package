@@ -62,6 +62,7 @@ jobs:
             echo "Error: Failed to update README.md"
             exit 1
           fi
+          cat README.md
       - name: Update package.json dependency
         if: env.HAS_CHANGES
         run: |
@@ -70,6 +71,7 @@ jobs:
               echo "Error: Failed to update package.json"
               exit 1
           fi
+          cat package.json
       - name: Commit and push changes
         if: env.HAS_CHANGES
         run: |
@@ -78,7 +80,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
           git commit -m "chore: update Unity package URL to version ${LATEST_VERSION}"
-          git push origin "HEAD:${BRANCH_NAME}"
+          git push origin "HEAD:refs/heads/${BRANCH_NAME}"
           echo "BRANCH_NAME=${BRANCH_NAME}" >> "$GITHUB_ENV"
       - name: Create Pull Request
         if: env.HAS_CHANGES
@@ -136,6 +138,8 @@ jobs:
             echo "Error: Failed to update README.md"
             exit 1
           fi
+          
+          cat Editor/Android/AdGemDependencies.xml
       - name: Commit and push changes
         if: env.HAS_CHANGES
         run: |
