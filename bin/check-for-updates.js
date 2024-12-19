@@ -64,10 +64,6 @@ async function checkOwnRepoUpdates() {
   console.log(latestVersion);
 }
 
-console.log('Checking for updates...');
-console.log('Github Token:', GITHUB_TOKEN);
-console.log('Check Type:', CHECK_TYPE);
-
 if (CHECK_TYPE === 'external') {
   checkExternalUpdates();
 } else if (CHECK_TYPE === 'self') {
