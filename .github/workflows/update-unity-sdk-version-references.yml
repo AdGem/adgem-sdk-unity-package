@@ -129,7 +129,7 @@ jobs:
           CURRENT_VERSION=$(grep -oP "com.adgem:adgem-android:\K[^\"]+" Editor/Android/AdGemDependencies.xml)
           echo "Current referenced Android SDK version: $CURRENT_VERSION"
           
-          if [ "$CURRENT_VERSION" = "$LATEST_ANDROID_SDK_VERSION" ]; then
+          if [ "$CURRENT_VERSION" = "$LATEST_VERSION" ]; then
             echo "Versions match"
           else
             echo "Versions do not match"
