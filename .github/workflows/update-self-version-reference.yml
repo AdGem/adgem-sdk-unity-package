@@ -57,7 +57,7 @@ jobs:
           
           echo "Latest version: $LATEST_VERSION"
           echo "Current version: $CURRENT_VERSION"
-          echo "Has changes: ${{ env.HAS_CHANGES }}"
+          echo "Has changes: $HAS_CHANGES"
       - name: Update README.md
         if: env.HAS_CHANGES
         run: |

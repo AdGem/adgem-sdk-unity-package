@@ -47,7 +47,7 @@ jobs:
           echo "HAS_CHANGES=$(LATEST_ANDROID_SDK_VERSION != $CURRENT_VERSION)" >> "$GITHUB_ENV"
           echo "Latest version: $LATEST_VERSION"
           echo "Current version: $CURRENT_VERSION"
-          echo "Has changes: ${{ env.HAS_CHANGES }}"
+          echo "Has changes: $HAS_CHANGES"
       - name: Update Android Manifest File
         if: env.HAS_CHANGES
         run: |
