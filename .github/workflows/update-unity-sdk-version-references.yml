@@ -25,15 +25,12 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
       - name: Install dependencies
         run: npm ci
-
       - name: Get latest AdGem Unity SDK version
         env:
           GITHUB_TOKEN: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
@@ -47,7 +44,7 @@ jobs:
           echo "LATEST_VERSION=$LATEST_VERSION" >> "$GITHUB_ENV"
           echo "Latest version: $LATEST_VERSION"
           
-          CURRENT_VERSION=$(grep -oP "\"adgem-sdk-unity-package\": \"\K[^\"]+" package.json)
+          CURRENT_VERSION=$(grep -oP "\"version\": \"\K[^\"]+" package.json)
           echo "Current version: $CURRENT_VERSION"
           
           echo "HAS_CHANGES=$(LATEST_VERSION != $CURRENT_VERSION)" >> "$GITHUB_ENV"
@@ -111,18 +108,15 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
       - name: Install dependencies
         run: npm ci
-
       - name: Get latest AdGem Android SDK updates
         env:
-          CHECK_TYPE: 'self'
+          CHECK_TYPE: 'external'
           GITHUB_TOKEN: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
         run: |
           if ! LATEST_VERSION=$(node ./bin/check-for-updates.js); then
@@ -132,7 +126,7 @@ jobs:
           echo "LATEST_ANDROID_SDK_VERSION=$LATEST_VERSION" >> "$GITHUB_ENV"
           echo "Latest version: $LATEST_VERSION"
           
-          CURRENT_VERSION=$(grep -oP "implementation 'com.adgem.android:adgem-sdk:\K[^']+" AndroidManifest.xml)
+          CURRENT_VERSION=$(grep -oP "com.adgem:adgem-android:\K[^\"]+" Editor/Android/AdGemDependencies.xml)
           echo "Current version: $CURRENT_VERSION"
           
           echo "HAS_CHANGES=$(LATEST_ANDROID_SDK_VERSION != $CURRENT_VERSION)" >> "$GITHUB_ENV"
@@ -143,8 +137,8 @@ jobs:
           set -e
           BRANCH_NAME="update-adgem-sdk-${LATEST_ANDROID_SDK_VERSION}-$(date +%s)"
           
-          if ! sed -i "s|implementation 'com.adgem.android:adgem-sdk:.*'|implementation 'com.adgem.android:adgem-sdk:${LATEST_ANDROID_SDK_VERSION}'|g" AndroidManifest.xml; then
-            echo "Error: Failed to update AndroidManifest.xml"
+          if ! sed -i "s|implementation 'com.adgem.android:adgem-sdk:.*'|implementation 'com.adgem:adgem-android:${LATEST_ANDROID_SDK_VERSION}'|g" AdGemDependencies.xml; then
+            echo "Error: Failed to update AdGemDependencies.xml"
             exit 1
           fi
       - name: Commit and push changes
