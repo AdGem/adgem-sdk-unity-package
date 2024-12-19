@@ -46,6 +46,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
           CHECK_TYPE: 'self'
         run: |
+          node ./bin/check-for-updates.js
           if ! LATEST_VERSION=$(node ./bin/check-for-updates.js); then
             echo "Error: Failed to get latest SDK version. Please check the script output above for details."
             exit 1
