@@ -71,6 +71,7 @@ jobs:
               echo "Error: Failed to update package.json"
               exit 1
           fi
+          # test
           cat package.json
       - name: Commit and push changes
         if: env.HAS_CHANGES
