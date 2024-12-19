@@ -93,6 +93,7 @@ jobs:
         with:
           token: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
           branch: ${{ env.BRANCH_NAME }}
+          base: main
           title: 'build: update Unity package URL to version ${{ env.LATEST_VERSION }}'
           body: |
             This PR updates the Unity package URL in the README.md file to the latest version.
@@ -163,6 +164,7 @@ jobs:
         with:
           token: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
           branch: update-adgem-sdk-${{ env.LATEST_ANDROID_SDK_VERSION }}
+          base: main
           title: 'build: update adgem sdk dependency version to ${{ env.LATEST_ANDROID_SDK_VERSION }}'
           delete-branch: true
           body: |
