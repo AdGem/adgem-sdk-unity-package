@@ -142,15 +142,10 @@ jobs:
             echo "Versions do not match"
             echo "HAS_CHANGES=TRUE" >> "$GITHUB_ENV"
           fi
-          
-          echo "Has changes: $HAS_CHANGES"
       - name: Update Android Manifest File
         if: env.HAS_CHANGES
-        run: |
-          set -e
-          BRANCH_NAME="update-adgem-sdk-${LATEST_ANDROID_SDK_VERSION}-$(date +%s)"
-          
-          if ! sed -i "s|implementation 'com.adgem.android:adgem-sdk:.*'|implementation 'com.adgem:adgem-android:${LATEST_ANDROID_SDK_VERSION}'|g" Editor/Android/AdGemDependencies.xml; then
+        run: |          
+          if ! grep -q 'com.adgem:adgem-android:${LATEST_VERSION}' Editor/Android/AdGemDependencies.xml; then
             echo "Error: Failed to update Editor/Android/AdGemDependencies.xml"
             exit 1
           fi
@@ -159,7 +154,7 @@ jobs:
         run: |
           git config --global user.name "${{ vars.BOT_NAME || 'adgem-developers' }}"
           git config --global user.email "${{ vars.BOT_EMAIL || 'developers@adgem.com' }}"
-          git add .
+          git add Editor/Android/AdGemDependencies.xml
           git commit -m 'fix(deps): update adgem sdk dependency version'
           git push origin HEAD:refs/heads/update-adgem-sdk-$LATEST_ANDROID_SDK_VERSION
 
