@@ -1,0 +1,64 @@
+name: Update Unity Package URL
+# Check out the repository.
+# Set up Node.js.
+# Install dependencies.
+# Get the latest version of the package using a Node.js script.
+# Update the README.md file with the new version.
+# Commit and push the changes to a new branch.
+# Create a pull request for the changes.
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Get latest version
+        env:
+          GITHUB_TOKEN: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
+          CHECK_TYPE: 'self'
+        run: |
+          LATEST_VERSION=$(node ./bin/check-for-updates.js)
+          if [ $? -ne 0 ]; then
+            echo "Failed to get latest SDK version"
+            exit 1
+          fi
+          echo "LATEST_VERSION=$LATEST_VERSION" >> "$GITHUB_ENV"
+
+      - name: Update README.md
+        run: |
+          sed -i "s|https://github.com/AdGem/adgem-sdk-unity-package.git#.*|https://github.com/AdGem/adgem-sdk-unity-package.git#$LATEST_VERSION|g" README.md
+          git add README.md
+          git commit -m "chore: update Unity package URL to version $LATEST_VERSION"
+          git push origin HEAD:update-unity-package-url-$LATEST_VERSION
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: update-unity-package-url-${{ env.LATEST_VERSION }}
+          title: 'chore: update Unity package URL to version ${{ env.LATEST_VERSION }}'
+          body: |
+            This PR updates the Unity package URL in the README.md file to the latest version.
+          labels: 'automated pr'
+          team-reviewers: adgem/sdk-team
