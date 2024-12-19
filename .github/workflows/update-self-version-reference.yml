@@ -45,11 +45,20 @@ jobs:
           echo "LATEST_VERSION=$LATEST_VERSION" >> "$GITHUB_ENV"
       - name: Update README.md
         run: |
-          sed -i "s|https://github.com/AdGem/adgem-sdk-unity-package.git#.*|https://github.com/AdGem/adgem-sdk-unity-package.git#$LATEST_VERSION|g" README.md
+          set -e
+          BRANCH_NAME="update-unity-package-url-${LATEST_VERSION}-$(date +%s)"
+          
+          if ! sed -i "s|https://github.com/AdGem/adgem-sdk-unity-package.git#.*|https://github.com/AdGem/adgem-sdk-unity-package.git#${LATEST_VERSION}|g" README.md; then
+            echo "Error: Failed to update README.md"
+            exit 1
+          fi
+          
           git add README.md
-          git commit -m "chore: update Unity package URL to version $LATEST_VERSION"
-          git push origin HEAD:update-unity-package-url-$LATEST_VERSION
-
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git commit -m "chore: update Unity package URL to version ${LATEST_VERSION}"
+          git push origin "HEAD:${BRANCH_NAME}"
+          echo "BRANCH_NAME=${BRANCH_NAME}" >> "$GITHUB_ENV"
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
