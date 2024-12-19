@@ -47,8 +47,14 @@ jobs:
           CURRENT_VERSION=$(grep -oP "\"version\": \"\K[^\"]+" package.json)
           echo "Current version: $CURRENT_VERSION"
           
-          echo "HAS_CHANGES=$(LATEST_VERSION != $CURRENT_VERSION)" >> "$GITHUB_ENV"
-          
+          if [[ "$CURRENT_VERSION" == "$LATEST_VERSION" ]]; then
+            echo "Versions match"
+            echo "HAS_CHANGES=FALSE" >> "$GITHUB_ENV"
+          else
+            echo "Versions do not match"
+            echo "HAS_CHANGES=TRUE" >> "$GITHUB_ENV"
+          fi
+        
           echo "Has changes: $HAS_CHANGES"
       - name: Update README.md
         if: env.HAS_CHANGES
@@ -129,7 +135,14 @@ jobs:
           CURRENT_VERSION=$(grep -oP "com.adgem:adgem-android:\K[^\"]+" Editor/Android/AdGemDependencies.xml)
           echo "Current version: $CURRENT_VERSION"
           
-          echo "HAS_CHANGES=$(LATEST_ANDROID_SDK_VERSION != $CURRENT_VERSION)" >> "$GITHUB_ENV"
+          if [[ "$CURRENT_VERSION" == "$LATEST_ANDROID_SDK_VERSION" ]]; then
+            echo "Versions match"
+            echo "HAS_CHANGES=FALSE" >> "$GITHUB_ENV"
+          else
+            echo "Versions do not match"
+            echo "HAS_CHANGES=TRUE" >> "$GITHUB_ENV"
+          fi
+          
           echo "Has changes: $HAS_CHANGES"
       - name: Update Android Manifest File
         if: env.HAS_CHANGES
