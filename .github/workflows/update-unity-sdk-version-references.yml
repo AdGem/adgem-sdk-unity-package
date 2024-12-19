@@ -1,0 +1,173 @@
+name: Update Unity SDK Version References
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  release:
+    types: [published]
+  schedule: # Run Daily
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  check-for-self-updates:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Get latest AdGem Unity SDK version
+        env:
+          GITHUB_TOKEN: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
+          CHECK_TYPE: 'self'
+        run: |
+          node ./bin/check-for-updates.js
+          if ! LATEST_VERSION=$(node ./bin/check-for-updates.js); then
+            echo "Error: Failed to get latest SDK version. Please check the script output above for details."
+            exit 1
+          fi
+          echo "LATEST_VERSION=$LATEST_VERSION" >> "$GITHUB_ENV"
+          echo "Latest version: $LATEST_VERSION"
+          
+          CURRENT_VERSION=$(grep -oP "\"adgem-sdk-unity-package\": \"\K[^\"]+" package.json)
+          echo "Current version: $CURRENT_VERSION"
+          
+          echo "HAS_CHANGES=$(LATEST_VERSION != $CURRENT_VERSION)" >> "$GITHUB_ENV"
+          
+          echo "Has changes: $HAS_CHANGES"
+      - name: Update README.md
+        if: env.HAS_CHANGES
+        run: |
+          set -e
+          
+          if ! sed -i "s|https://github.com/AdGem/adgem-sdk-unity-package.git#.*|https://github.com/AdGem/adgem-sdk-unity-package.git#${LATEST_VERSION}|g" README.md; then
+            echo "Error: Failed to update README.md"
+            exit 1
+          fi
+      - name: Update package.json dependency
+        if: env.HAS_CHANGES
+        run: |
+          set -e
+          if ! sed -i "s|\"adgem-sdk-unity-package\": \".*\"|\"adgem-sdk-unity-package\": \"${LATEST_VERSION}\"|g" package.json; then
+              echo "Error: Failed to update package.json"
+              exit 1
+          fi
+      - name: Verify file changes
+        if: env.HAS_CHANGES
+        run: |
+          if ! grep -q "adgem-sdk-unity-package.git#${LATEST_VERSION}" README.md; then
+            echo "Error: README.md was not updated"
+            exit 1
+          fi
+          if ! grep -q "version": "${LATEST_VERSION}" package.json; then
+            echo "Error: package.json was not updated"
+            exit 1
+          fi
+      - name: Commit and push changes
+        if: env.HAS_CHANGES
+        run: |
+          BRANCH_NAME="update-unity-package-url-${LATEST_VERSION}-$(date +%s)"
+          git add README.md package.json
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git commit -m "chore: update Unity package URL to version ${LATEST_VERSION}"
+          git push origin "HEAD:${BRANCH_NAME}"
+          echo "BRANCH_NAME=${BRANCH_NAME}" >> "$GITHUB_ENV"
+      - name: Create Pull Request
+        if: env.HAS_CHANGES
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
+          branch: ${{ env.BRANCH_NAME }}
+          title: 'build: update Unity package URL to version ${{ env.LATEST_VERSION }}'
+          body: |
+            This PR updates the Unity package URL in the README.md file to the latest version.
+          labels: 'automated pr'
+          team-reviewers: adgem/sdk-team
+  check-for-android-updates:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Get latest AdGem Android SDK updates
+        env:
+          CHECK_TYPE: 'self'
+          GITHUB_TOKEN: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
+        run: |
+          if ! LATEST_VERSION=$(node ./bin/check-for-updates.js); then
+            echo "Error: Failed to get latest SDK version. Please check the script output above for details."
+            exit 1
+          fi
+          echo "LATEST_ANDROID_SDK_VERSION=$LATEST_VERSION" >> "$GITHUB_ENV"
+          echo "Latest version: $LATEST_VERSION"
+          
+          CURRENT_VERSION=$(grep -oP "implementation 'com.adgem.android:adgem-sdk:\K[^']+" AndroidManifest.xml)
+          echo "Current version: $CURRENT_VERSION"
+          
+          echo "HAS_CHANGES=$(LATEST_ANDROID_SDK_VERSION != $CURRENT_VERSION)" >> "$GITHUB_ENV"
+          echo "Has changes: $HAS_CHANGES"
+      - name: Update Android Manifest File
+        if: env.HAS_CHANGES
+        run: |
+          set -e
+          BRANCH_NAME="update-adgem-sdk-${LATEST_ANDROID_SDK_VERSION}-$(date +%s)"
+          
+          if ! sed -i "s|implementation 'com.adgem.android:adgem-sdk:.*'|implementation 'com.adgem.android:adgem-sdk:${LATEST_ANDROID_SDK_VERSION}'|g" AndroidManifest.xml; then
+            echo "Error: Failed to update AndroidManifest.xml"
+            exit 1
+          fi
+      - name: Commit and push changes
+        if: env.HAS_CHANGES
+        run: |
+          git config --global user.name "${{ vars.BOT_NAME || 'adgem-developers' }}"
+          git config --global user.email "${{ vars.BOT_EMAIL || 'developers@adgem.com' }}"
+          git add .
+          git commit -m 'fix(deps): update adgem sdk dependency version'
+          git push origin HEAD:refs/heads/update-adgem-sdk-$LATEST_ANDROID_SDK_VERSION
+
+      - name: Create Pull Request
+        if: env.HAS_CHANGES
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
+          branch: update-adgem-sdk-${{ env.LATEST_ANDROID_SDK_VERSION }}
+          title: 'build: update adgem sdk dependency version'
+          delete-branch: true
+          body: |
+            This PR updates the AdGem SDK version to the latest release.
+            
+            cc: @adgem/sdk-team
+
+          labels: 'automated pr'
+          team-reviewers: adgem/sdk-team
