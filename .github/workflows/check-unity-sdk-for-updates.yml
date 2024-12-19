@@ -27,19 +27,27 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Check for AdGem SDK updates
+      - name: Get latest AdGem Android SDK updates
+        env:
+          CHECK_TYPE: 'self'
+          GITHUB_TOKEN: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
         run: |
-          LATEST_VERSION=$(node ./bin/check-for-updates.js)
-          if [ $? -ne 0 ]; then
-            echo "Failed to get latest SDK version"
+          if ! LATEST_VERSION=$(node ./bin/check-for-updates.js); then
+            echo "Error: Failed to get latest SDK version. Please check the script output above for details."
             exit 1
           fi
           echo "LATEST_ANDROID_SDK_VERSION=$LATEST_VERSION" >> "$GITHUB_ENV"
           echo "HAS_CHANGES=$(git status --porcelain -z | tr '\0' ' ')" >> "$GITHUB_ENV"
-        env:
-          CHECK_TYPE: 'self'
-          GITHUB_TOKEN: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
-
+      - name: Update Android Manifest File
+        if: env.HAS_CHANGES
+        run: |
+          set -e
+          BRANCH_NAME="update-adgem-sdk-${LATEST_ANDROID_SDK_VERSION}-$(date +%s)"
+          
+          if ! sed -i "s|implementation 'com.adgem.android:adgem-sdk:.*'|implementation 'com.adgem.android:adgem-sdk:${LATEST_ANDROID_SDK_VERSION}'|g" AndroidManifest.xml; then
+            echo "Error: Failed to update AndroidManifest.xml"
+            exit 1
+          fi
       - name: Commit and push changes
         if: env.HAS_CHANGES
         run: |
