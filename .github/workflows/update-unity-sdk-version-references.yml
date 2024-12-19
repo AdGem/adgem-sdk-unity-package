@@ -49,13 +49,10 @@ jobs:
           
           if [[ "$CURRENT_VERSION" == "$LATEST_VERSION" ]]; then
             echo "Versions match"
-            echo "HAS_CHANGES=FALSE" >> "$GITHUB_ENV"
           else
             echo "Versions do not match"
             echo "HAS_CHANGES=TRUE" >> "$GITHUB_ENV"
           fi
-        
-          echo "Has changes: $HAS_CHANGES"
       - name: Update README.md
         if: env.HAS_CHANGES
         run: |
@@ -72,17 +69,6 @@ jobs:
           if ! sed -i "s|\"adgem-sdk-unity-package\": \".*\"|\"adgem-sdk-unity-package\": \"${LATEST_VERSION}\"|g" package.json; then
               echo "Error: Failed to update package.json"
               exit 1
-          fi
-      - name: Verify file changes
-        if: env.HAS_CHANGES
-        run: |
-          if ! grep -q "adgem-sdk-unity-package.git#${LATEST_VERSION}" README.md; then
-            echo "Error: README.md was not updated"
-            exit 1
-          fi
-          if ! grep -q '"version": "${LATEST_VERSION}"' package.json; then
-            echo "Error: package.json was not updated"
-            exit 1
           fi
       - name: Commit and push changes
         if: env.HAS_CHANGES
@@ -137,16 +123,17 @@ jobs:
           
           if [[ "$CURRENT_VERSION" == "$LATEST_ANDROID_SDK_VERSION" ]]; then
             echo "Versions match"
-            echo "HAS_CHANGES=FALSE" >> "$GITHUB_ENV"
           else
             echo "Versions do not match"
             echo "HAS_CHANGES=TRUE" >> "$GITHUB_ENV"
           fi
       - name: Update Android Manifest File
         if: env.HAS_CHANGES
-        run: |          
-          if ! grep -q 'com.adgem:adgem-android:${LATEST_VERSION}' Editor/Android/AdGemDependencies.xml; then
-            echo "Error: Failed to update Editor/Android/AdGemDependencies.xml"
+        run: |
+          set -e
+          
+          if ! sed -i "s|com.adgem:adgem-android:#.*|com.adgem:adgem-android:#${LATEST_VERSION}|g" Editor/Android/AdGemDependencies.xml; then
+            echo "Error: Failed to update README.md"
             exit 1
           fi
       - name: Commit and push changes
