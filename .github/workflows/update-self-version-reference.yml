@@ -51,8 +51,13 @@ jobs:
             exit 1
           fi
           echo "LATEST_VERSION=$LATEST_VERSION" >> "$GITHUB_ENV"
-          echo "HAS_CHANGES=$(git status --porcelain -z | tr '\0' ' ')" >> "$GITHUB_ENV"
+          
+          CURRENT_VERSION=$(grep -oP "\"adgem-sdk-unity-package\": \"\K[^\"]+" package.json)
+          echo "HAS_CHANGES=$(LATEST_VERSION != $CURRENT_VERSION)" >> "$GITHUB_ENV"
+          
           echo "Latest version: $LATEST_VERSION"
+          echo "Current version: $CURRENT_VERSION"
+          echo "Has changes: ${{ env.HAS_CHANGES }}"
       - name: Update README.md
         if: env.HAS_CHANGES
         run: |
