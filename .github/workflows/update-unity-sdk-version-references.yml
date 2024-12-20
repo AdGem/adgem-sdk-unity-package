@@ -98,7 +98,7 @@ jobs:
           body: |
             This PR updates the Unity package URL in the README.md file to the latest version.
           labels: 'automated pr'
-          team-reviewers: adgem/sdk-team
+          team-reviewers: tustanivsky
   check-for-android-updates:
     runs-on: ubuntu-latest
 
@@ -173,4 +173,4 @@ jobs:
             cc: @adgem/sdk-team
 
           labels: 'automated pr'
-          team-reviewers: adgem/sdk-team
+          team-reviewers: tustanivsky
