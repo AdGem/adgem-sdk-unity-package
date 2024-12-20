@@ -96,9 +96,9 @@ jobs:
           base: main
           title: 'build: update Unity package URL to version ${{ env.LATEST_VERSION }}'
           body: |
-            This PR updates the Unity package URL in the README.md file to the latest version.
+            This PR updates the Unity package URL in the README.md file to the latest version(v${{ env.LATEST_VERSION }}).
           labels: 'automated pr'
-          team-reviewers: tustanivsky
+          reviewers: tustanivsky,munkiki7
   check-for-android-updates:
     runs-on: ubuntu-latest
 
@@ -173,4 +173,4 @@ jobs:
             cc: @adgem/sdk-team
 
           labels: 'automated pr'
-          team-reviewers: tustanivsky
+          reviewers: tustanivsky,munkiki7
