@@ -5,9 +5,6 @@ concurrency:
   cancel-in-progress: true
 
 on:
-  push:
-    branches:
-      - dakota/fix-workflow-issues
   release:
     types: [ published ]
   schedule: # Run Daily
@@ -70,7 +67,7 @@ jobs:
         if: env.HAS_CHANGES
         run: |
           set -e
-          if ! sed -i "s|\"adgem-sdk-unity-package\": \".*\"|\"adgem-sdk-unity-package\": \"${LATEST_VERSION}\"|g" package.json; then
+          if ! sed -i "s|\"version\": \".*\"|\"version\": \"${LATEST_VERSION}\"|g" package.json; then
               echo "Error: Failed to update package.json"
               exit 1
           fi
@@ -84,7 +81,7 @@ jobs:
           git add README.md package.json
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
-          git commit -m "chore: update Unity package URL to version ${LATEST_VERSION}"
+          git commit -m "build(deps): update Unity package URL to version ${LATEST_VERSION}"
           git push origin "HEAD:refs/heads/${BRANCH_NAME}"
           echo "BRANCH_NAME=${BRANCH_NAME}" >> "$GITHUB_ENV"
       - name: Create Pull Request
@@ -93,11 +90,12 @@ jobs:
         with:
           token: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
           branch: ${{ env.BRANCH_NAME }}
+          base: main
           title: 'build: update Unity package URL to version ${{ env.LATEST_VERSION }}'
           body: |
-            This PR updates the Unity package URL in the README.md file to the latest version.
+            This PR updates the Unity package URL in the README.md file to the latest version(v${{ env.LATEST_VERSION }}).
           labels: 'automated pr'
-          team-reviewers: adgem/sdk-team
+          reviewers: tustanivsky,munkiki7
   check-for-android-updates:
     runs-on: ubuntu-latest
 
@@ -129,7 +127,7 @@ jobs:
           CURRENT_VERSION=$(grep -oP "com.adgem:adgem-android:\K[^\"]+" Editor/Android/AdGemDependencies.xml)
           echo "Current referenced Android SDK version: $CURRENT_VERSION"
           
-          if [ "$CURRENT_VERSION" = "$LATEST_ANDROID_SDK_VERSION" ]; then
+          if [ "$CURRENT_VERSION" = "$LATEST_VERSION" ]; then
             echo "Versions match"
           else
             echo "Versions do not match"
@@ -154,7 +152,7 @@ jobs:
           git config --global user.name "${{ vars.BOT_NAME || 'adgem-developers' }}"
           git config --global user.email "${{ vars.BOT_EMAIL || 'developers@adgem.com' }}"
           git add Editor/Android/AdGemDependencies.xml
-          git commit -m 'fix(deps): update adgem android sdk dependency version to ${{ env.LATEST_ANDROID_SDK_VERSION }}'
+          git commit -m 'build(deps): update adgem android sdk dependency version to ${{ env.LATEST_ANDROID_SDK_VERSION }}'
           git push origin HEAD:refs/heads/update-adgem-sdk-$LATEST_ANDROID_SDK_VERSION
 
       - name: Create Pull Request
@@ -163,6 +161,7 @@ jobs:
         with:
           token: ${{ secrets.ADGEM_SDK_ACTIONS_TOKEN }}
           branch: update-adgem-sdk-${{ env.LATEST_ANDROID_SDK_VERSION }}
+          base: main
           title: 'build: update adgem sdk dependency version to ${{ env.LATEST_ANDROID_SDK_VERSION }}'
           delete-branch: true
           body: |
@@ -171,4 +170,4 @@ jobs:
             cc: @adgem/sdk-team
 
           labels: 'automated pr'
-          team-reviewers: adgem/sdk-team
+          reviewers: tustanivsky,munkiki7
