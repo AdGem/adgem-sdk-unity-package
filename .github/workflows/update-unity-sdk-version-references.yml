@@ -70,7 +70,7 @@ jobs:
         if: env.HAS_CHANGES
         run: |
           set -e
-          if ! sed -i "s|\"adgem-sdk-unity-package\": \".*\"|\"adgem-sdk-unity-package\": \"${LATEST_VERSION}\"|g" package.json; then
+          if ! sed -i "s|\"version\": \".*\"|\"version\": \"${LATEST_VERSION}\"|g" package.json; then
               echo "Error: Failed to update package.json"
               exit 1
           fi
