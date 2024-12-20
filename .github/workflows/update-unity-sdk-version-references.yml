@@ -84,7 +84,7 @@ jobs:
           git add README.md package.json
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
-          git commit -m "chore: update Unity package URL to version ${LATEST_VERSION}"
+          git commit -m "build(deps): update Unity package URL to version ${LATEST_VERSION}"
           git push origin "HEAD:refs/heads/${BRANCH_NAME}"
           echo "BRANCH_NAME=${BRANCH_NAME}" >> "$GITHUB_ENV"
       - name: Create Pull Request
@@ -155,7 +155,7 @@ jobs:
           git config --global user.name "${{ vars.BOT_NAME || 'adgem-developers' }}"
           git config --global user.email "${{ vars.BOT_EMAIL || 'developers@adgem.com' }}"
           git add Editor/Android/AdGemDependencies.xml
-          git commit -m 'fix(deps): update adgem android sdk dependency version to ${{ env.LATEST_ANDROID_SDK_VERSION }}'
+          git commit -m 'build(deps): update adgem android sdk dependency version to ${{ env.LATEST_ANDROID_SDK_VERSION }}'
           git push origin HEAD:refs/heads/update-adgem-sdk-$LATEST_ANDROID_SDK_VERSION
 
       - name: Create Pull Request
