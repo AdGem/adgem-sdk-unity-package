@@ -14,7 +14,7 @@ The AdGem SDK for the Unity Package Manager.
 Install the AdGem Unity SDK package via the [Unity Package Manager using the following Git URL](https://docs.unity3d.com/Manual/upm-ui-giturl.html):
 
 ```
-https://github.com/AdGem/adgem-sdk-unity-package.git#1.4.0
+https://github.com/AdGem/adgem-sdk-unity-package.git#1.6.14
 ```
 
 In the Editor, you can access the Package Manager window through the **Window > Package Manager** menu.
